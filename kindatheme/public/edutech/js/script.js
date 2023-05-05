@@ -82,4 +82,7 @@
         counter();
     });
 
+    
+
+
 })(jQuery);
