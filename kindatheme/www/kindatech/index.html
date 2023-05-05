@@ -1,0 +1,93 @@
+{% extends 'templates/base/kindabase.html' %}
+{% block title %} Home {% endblock %}
+
+{% block content %}
+
+
+<!-- Modal -->
+<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content rounded-0 border-0 p-4">
+          <div class="modal-header border-0">
+              <h3>Register</h3>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body">
+              <div class="login">
+                  <form action="#" class="row">
+                      <div class="col-12">
+                          <input type="text" class="form-control mb-3" id="signupPhone" name="signupPhone" placeholder="Phone">
+                      </div>
+                      <div class="col-12">
+                          <input type="text" class="form-control mb-3" id="signupName" name="signupName" placeholder="Name">
+                      </div>
+                      <div class="col-12">
+                          <input type="email" class="form-control mb-3" id="signupEmail" name="signupEmail" placeholder="Email">
+                      </div>
+                      <div class="col-12">
+                          <input type="password" class="form-control mb-3" id="signupPassword" name="signupPassword" placeholder="Password">
+                      </div>
+                      <div class="col-12">
+                          <button type="submit" class="btn btn-primary">SIGN UP</button>
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
+  <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content rounded-0 border-0 p-4">
+          <div class="modal-header border-0">
+              <h3>Login</h3>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                  <span aria-hidden="true">&times;</span>
+              </button>
+          </div>
+          <div class="modal-body">
+              <form action="#" class="row">
+                  <div class="col-12">
+                      <input type="text" class="form-control mb-3" id="loginPhone" name="loginPhone" placeholder="Phone">
+                  </div>
+                  <div class="col-12">
+                      <input type="text" class="form-control mb-3" id="loginName" name="loginName" placeholder="Name">
+                  </div>
+                  <div class="col-12">
+                      <input type="password" class="form-control mb-3" id="loginPassword" name="loginPassword" placeholder="Password">
+                  </div>
+                  <div class="col-12">
+                      <button type="submit" class="btn btn-primary">LOGIN</button>
+                  </div>
+              </form>
+          </div>
+      </div>
+  </div>
+</div>
+
+<!-- hero slider -->
+<section class="hero-section overlay bg-cover" data-background="/assets/kindatech_theme/educenter/theme/images/banner/sigbanner.jpg">
+<div class="container">
+  <!-- <div class="hero-slider"> -->
+    <!-- slider item -->
+    <div class="hero-slider-item">
+      <div class="row">
+        <div class="col-md-10">
+          <h1 class="text-white" data-animation-out="fadeOutRight" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInLeft" data-delay-in=".1">Technology for business efficiency, growth, access to finance and employment creation</h1>
+          <p class="text-muted mb-6" data-animation-out="fadeOutRight" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInLeft" data-delay-in=".4" style="font-size:22px">Integrated Tech Solutions for Startups, SMEs, Education Services and Health Services. </p>
+          <p class="text-muted mb-6" data-animation-out="fadeOutRight" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInLeft" data-delay-in=".4" style="font-size:22px">Wide selection of Edtech, HealthTech or  EnterpriseTech Modules,  integrated with Accounting, HR, Payroll and CRM..</p>
+          <a href="contact" class="btn btn-primary" data-animation-out="fadeOutRight" data-delay-out="5" data-duration-in=".3" data-animation-in="fadeInLeft" data-delay-in=".7">Sign Up</a>
+        </div>
+      </div>
+    </div>
+
+</div>
+</section>
+<!-- /hero slider -->
+
+
+
+{% endblock %}
