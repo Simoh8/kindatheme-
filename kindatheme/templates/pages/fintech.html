@@ -1,0 +1,127 @@
+{% extends 'templates/base/kindabase.html' %}
+{% block title %}Integrated Enterprise Technology {% endblock %}
+
+
+{% block content %}
+
+
+<!-- Modal -->
+<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content rounded-0 border-0 p-4">
+            <div class="modal-header border-0">
+                <h3>Register</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="login">
+                    <form action="#" class="row">
+                        <div class="col-12">
+                            <input type="text" class="form-control mb-3" id="signupPhone" name="signupPhone" placeholder="Phone">
+                        </div>
+                        <div class="col-12">
+                            <input type="text" class="form-control mb-3" id="signupName" name="signupName" placeholder="Name">
+                        </div>
+                        <div class="col-12">
+                            <input type="email" class="form-control mb-3" id="signupEmail" name="signupEmail" placeholder="Email">
+                        </div>
+                        <div class="col-12">
+                            <input type="password" class="form-control mb-3" id="signupPassword" name="signupPassword" placeholder="Password">
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">SIGN UP</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content rounded-0 border-0 p-4">
+            <div class="modal-header border-0">
+                <h3>Login</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="#" class="row">
+                    <div class="col-12">
+                        <input type="text" class="form-control mb-3" id="loginPhone" name="loginPhone" placeholder="Phone">
+                    </div>
+                    <div class="col-12">
+                        <input type="text" class="form-control mb-3" id="loginName" name="loginName" placeholder="Name">
+                    </div>
+                    <div class="col-12">
+                        <input type="password" class="form-control mb-3" id="loginPassword" name="loginPassword" placeholder="Password">
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary">LOGIN</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- page title -->
+<section class="page-title-section overlay" data-background="/assets/kindatech_theme/educenter/theme/images/backgrounds/page-title.jpg">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <ul class="list-inline custom-breadcrumb mb-2">
+          <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="notice.html">Services</a></li>
+          <li class="list-inline-item text-white h3 font-secondary nasted">Integrated Enterprise Technology</li>
+        </ul>
+        <p class="text-lighten mb-0">For business efficiency and access to finance for business growth and employment creation.</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /page title -->
+
+<!-- notice details -->
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="d-flex">
+          <div class="text-center mr-4">
+            <div class="p-4 bg-primary text-white">
+                <span class="h2 d-block">Top</span> Benefits
+            </div>
+          </div>
+          <!-- notice content -->
+          <div>
+            <h5 class="mb-4">Benefits to SMES using our fintech solution</h5>
+            <p>Overall, the use of Kinda Fintech provides SMEs with a range of benefits that can help them grow and succeed in today's digital economy.</p>
+            <p>The SMEs using our fintech solution will benefit as follows: </p>
+            <!-- <p>Quam justo. Non ligula turpis sem, velit dolor luctus venenatis. Eros eget at vitae, wisi diam ut ad convallis, in gravida nunc inceptos sed leo donec, duis dolorem adipiscing arcu facilisis. Purus lorem vulputate et condimentum in felis, porttitor accumsan id bibendum diam varius, lorem diam molestie erat a amet urna, dolor pellentesque lectus justo adipiscing. Laoreet est velit vestibulum, laoreet luctus bibendum sed ornare amet elementum, ullamcorper nibh in sollicitudin donec arcu lorem.</p> -->
+            <ul class="list-styled mb-5">
+              <li>
+                <p><strong>Access an offline and online supported system </strong> that allows them to function with or without connectivity.</p>
+            
+              </li>
+
+              <li>
+                <h5 class="mb-4">Access to finance</h5>
+                 Kinda Fintech enables SMEs to access a range of tech tools, information and advisory services that accelerate their competence to acquire responsive financial products and services. These bespoke solutions and services may not always be available to SMEs through traditional banks, financial institutions or as a bundle. FInancial services can include access to credit, loans, and other forms of funding that can help SMEs grow and expand.</li>
+              <li><h5 class="mb-4">Improved efficiency</h5> Kinda Fintech solutions are designed to help SMEs streamline their operations and reduce their reliance on manual processes. This can save time and reduce the costs associated with managing finances, making it easier for SMEs to focus on their core business activities.</li>
+              <li><h5 class="mb-4">Enhanced security</h5>Kinda Fintech solutions often use advanced security technologies to protect businesses and their customers from fraud and other forms of financial crime. This can provide peace of mind for SMEs and their customers, and help to build trust and confidence in the digital economy.</li>
+              <li><h5 class="mb-4">Increased competition</h5> Kinda Fintech can also help to increase competition in the financial services sector, which can lead to better prices and more choice for SMEs. This can help to level the playing field for SMEs, enabling them to access the same financial products and services as larger businesses.</li>
+            </ul>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /notice details -->
+
+{% endblock %}

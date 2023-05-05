@@ -1,0 +1,122 @@
+
+{% extends 'templates/base/kindabase.html' %}
+{% block title %} HealthTech {% endblock %}
+
+{% block content %}
+
+<!-- Modal -->
+<div class="modal fade" id="signupModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content rounded-0 border-0 p-4">
+            <div class="modal-header border-0">
+                <h3>Register</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="login">
+                    <form action="#" class="row">
+                        <div class="col-12">
+                            <input type="text" class="form-control mb-3" id="signupPhone" name="signupPhone" placeholder="Phone">
+                        </div>
+                        <div class="col-12">
+                            <input type="text" class="form-control mb-3" id="signupName" name="signupName" placeholder="Name">
+                        </div>
+                        <div class="col-12">
+                            <input type="email" class="form-control mb-3" id="signupEmail" name="signupEmail" placeholder="Email">
+                        </div>
+                        <div class="col-12">
+                            <input type="password" class="form-control mb-3" id="signupPassword" name="signupPassword" placeholder="Password">
+                        </div>
+                        <div class="col-12">
+                            <button type="submit" class="btn btn-primary">SIGN UP</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="loginModal" tabindex="-1" role="dialog" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+        <div class="modal-content rounded-0 border-0 p-4">
+            <div class="modal-header border-0">
+                <h3>Login</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form action="#" class="row">
+                    <div class="col-12">
+                        <input type="text" class="form-control mb-3" id="loginPhone" name="loginPhone" placeholder="Phone">
+                    </div>
+                    <div class="col-12">
+                        <input type="text" class="form-control mb-3" id="loginName" name="loginName" placeholder="Name">
+                    </div>
+                    <div class="col-12">
+                        <input type="password" class="form-control mb-3" id="loginPassword" name="loginPassword" placeholder="Password">
+                    </div>
+                    <div class="col-12">
+                        <button type="submit" class="btn btn-primary">LOGIN</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- page title -->
+<section class="page-title-section overlay" data-background="/assets/kindatech_theme/educenter/theme/images/backgrounds/page-title.jpg">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <ul class="list-inline custom-breadcrumb mb-2">
+          <li class="list-inline-item"><a class="h2 text-primary font-secondary" href="notice">Services</a></li>
+          <li class="list-inline-item text-white h3 font-secondary nasted">HealthTech for Hospitals and Clinics</li>
+        </ul>
+        <p class="text-lighten mb-0">Integrated for improved efficiency in health service provision</p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /page title -->
+
+<!-- notice details -->
+<section class="section">
+  <div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="d-flex">
+          <div class="text-center mr-4">
+            <div class="p-4 bg-primary text-white">
+                <span class="h2 d-block">Key</span> Benefits
+            </div>
+          </div>
+          <!-- notice content -->
+          <div>
+            <h5 class="mb-4">HealthTech for Hospitals and Clinics</h5>
+            <p>KindaTech integrated health technology provides a number of benefits, including: </p>
+            <ul class="list-styled mb-5">
+              <li>
+                <h5 class="mb-4">Improved patient care</h5>
+                It allows healthcare providers to access a patient's complete medical history and current medication regimen, which can help ensure that the patient receives appropriate care.</li>
+              <li><h5 class="mb-4">Increased efficiency</h5>By using our integrated health technology, healthcare providers can more easily access and share patient information, which can help reduce the time and resources needed to provide care.</li>
+              <li><h5 class="mb-4">Better communication</h5>It also helps improve communication between healthcare providers, which can help ensure that patients receive appropriate care and can help reduce the risk of medical errors.</li>
+              <li><h5 class="mb-4">Reduced costs</h5>It helps reduce the costs associated with providing healthcare, by making it easier for healthcare providers to access and share patient information, and by reducing the risk of medical errors.</li>
+              <li><h5 class="mb-4">Remote Monitoring & Follow ups</h5>The patient can be followed up remotely which can be very useful during the pandemics or lockdown situations.</li>
+              <li><h5 class="mb-4">Improved patient engagement and education</h5>Our Integrated Health technology can provide patients with more information and resources, which can help them take a more active role in managing their own health.</li>
+            </ul>
+            
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /notice details -->
+
+
+{% endblock %}
