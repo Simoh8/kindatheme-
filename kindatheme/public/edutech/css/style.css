@@ -470,6 +470,11 @@ a h4:hover {
   padding: 200px 0 80px;
 }
 
+/* small page title */
+.page-header-section {
+  padding: 100px 0 80px;
+}
+
 .custom-breadcrumb li.nasted {
   position: relative;
   padding-left: 25px;
