@@ -4,512 +4,524 @@
 
 {% block content %}
 
-<!-- <section class="hero-section bg-cover" style="background-color: #f6f7f7 !important;"> -->
-<section class="section bg-pricing-2"  style="background-color: #efeff4;" >
-    <div class="container"  style="box-shadow: rgba(139, 138, 138, 0.35) 0px 5px 15px; margin-top: 50px; background-color: #fff;">
-        <div class="row justify-content-center" >
-            <!-- <div id="multi-step-form-container"> -->
-                <!-- Form Steps / Progress Bar -->
-                <!-- <ul class="form-stepper form-stepper-horizontal text-center mx-auto pl-0 py-4" style="margin-bottom: 0px;">
-                  
-                    <li class="form-stepper-active text-center form-stepper-list" step="1">
-                        <a class="mx-2">
-                            <span class="form-stepper-circle">
-                                <span>1</span>
-                            </span>
-                            <div class="label">Select ERP Modules</div>
-                        </a>
-                    </li>
-              
-                    <li class="form-stepper-unfinished text-center form-stepper-list" step="2">
-                        <a class="mx-2">
-                            <span class="form-stepper-circle text-muted">
-                                <span>2</span>
-                            </span>
-                            <div class="label text-muted">Customer Details</div>
-                        </a>
-                    </li>
-            
-                    <li class="form-stepper-unfinished text-center form-stepper-list" step="3">
-                        <a class="mx-2">
-                            <span class="form-stepper-circle text-muted">
-                                <span>3</span>
-                            </span>
-                            <div class="label text-muted">Submit</div>
-                        </a>
-                    </li>
-                </ul> -->
-                <!-- Step Wise Form Content -->
-                <form id="userAccountSetupForm" name="userAccountSetupForm" enctype="multipart/form-data" method="POST">
-                    <!-- Step 1 Content -->
-                    <section id="step-1" class="form-step">
-                      
-                        <div class="row business-techs pt-0 justify-content-evenly ">
-                            <div class="col-md-12" >
-                            
-                                <div class="bg-pricing-2 pricing-box border py-4 px-4 px-md-5 h-100" style="box-shadow: rgba(139, 138, 138, 0.35) 0px 5px 15px; padding-top: 4px;">
-                                    <!-- <h4 class="head-title" style="color: #ffbc3b; font-size: 25px; font-weight: 400;">Enterprise Tech</h4> -->
-                                    <h3 class="mb-xl-0 mb-lg-4" >Enterprise Tech</h3>
-                                    <p class="pt-3 text-secondary">For business efficiency and access to finance for business growth and employment creation.</p>
+<section class="page-title-section overlay pb-0 px-0" style="margin-bottom: 0px;"  >
+    <div class="container">
+      <div class="row" >
+        <div class="col-md-8">
+          <ul class="list-inline custom-breadcrumb mb-2">
+            <li class="list-inline-item h2 text-primary font-secondary">Sign up</li>
+          </ul>
+ 
+        </div>
+      </div>
+    </div>
+  </section>
 
-                                    <div class="row justify-content-end align-items-center">
-                                        <div class="col-md-7 border-0 bg-light-gray">                            
-                                            <div class="py-1">      
-                                                <h5 class="head-title p-0"style="color: #ffbc3b;">Select Modules</h5>  
-                                                                          
-                                                <ul class="py-3" style="list-style-type: none; " onclick="module_fee()" >
-                                                    <li style="margin-top: 0px;">
-                                                        <input type="checkbox" id="enttech-account" name="ent-tech-account" 
-                                                        value="Accounting" >
-                                                        <label for="ent-tech-account" style="padding-left: 5px;"> Accounting</label><br>
-                                                        <!-- <id="enttechaccount" style="display:none">Checkbox is CHECKED!</p>  -->
-                                                    </li>
-                                                    <!-- <span>&nbsp;</span> -->
-                                                    <li style="margin-top: 5px;">
-                                                        <input type="checkbox" id="enttech-hr" name="ent-tech-hr" 
-                                                        value="HR and Payroll" >
-                                                        <label for="ent-tech-hr" style="padding-left: 5px;" > HR and Payroll</label><br>
-                                                    </li>
-                                                    <li style="margin-top: 5px;">
-                                                        <input type="checkbox" id="enttech-stock" name="ent-tech-inventory" value="Stock and Inventory">
-                                                        <label for="ent-tech-inventory" style="padding-left: 5px;"> Stock and Inventory</label><br>
-                                                    </li>
-                                                    <li style="margin-top: 5px;">
-                                                        <input type="checkbox" id="enttech-loan" name="ent-tech-loan" value="Loan Management">
-                                                        <label for="ent-tech-loan" style="padding-left: 5px;"> Loan Management</label><br>
-                                                    </li>
-                                                    <li style="margin-top: 5px;">
-                                                        <input type="checkbox" id="enttech-project" name="ent-tech-project" value="Project Mnagaement">
-                                                        <label for="ent-tech-project" style="padding-left: 5px;"> Project Management</label><br>
-                                                    </li>
-                                                </ul>                                                                    
-                                            </div>      
-                                        </div>  
-    
-                                        <div class="col-md-5 ">                            
-                                            <div class="p-2 border-5 bg-color-white">  
-                                                                                      
-                                                <span id="entfee_start">Starts at</span>
-                                                    <!-- <h2 class="display-7 mb-0  text-bold pt-2" id="entamt" name="entasmt" style="display: none;">$30</h2> -->
-                                                    <h2 class="display-7 mb-0  text-bold" id="entamt" name="enstamt" style="display: block;">$30</h2>
-                                                    <p class="mb-0 text-muted" id="entfee_per">per month</p>
-                                                <div class="input-text">                                            
-                                                    <div class="input-div">
-                                                        <label for="entertech-interval">Payment Interval</label><br>
-        
-                                                        <select name="entertech-interval" id="entertech-intervals" style="background: inherit;" onclick="module_fee()">
-                                                            <option value="null" selected disabled>Choose one...</option>
-                                                            <option value="Monthly" selected>Monthly</option>
-                                                            <option value="Quarterly">Quarterly</option>
-                                                            <option value="Annually">Annually</option>
-                                                        </select>           
-                                                    </div>     
-                                                    <div class="flex">
-                                                        <label for="entertech-user">Users</label>
-                                                      
-                                                        <input type="number" id="entertech-user" name="entertech-user" min="0" max="5000" value="5" disabled style="width: 100%;"> 
-                                                    </div>                                                        
-                                                </div>                                     
+
+    <section class="section bg-pricing-2 py-0"  style="background-color: #efeff4; "  >
+        <div class="container"  style="box-shadow: rgba(139, 138, 138, 0.35) 0px 5px 5px; margin-top: 0px; background-color: #fff;">
+            <div class="row justify-content-center" >
+                <!-- <div id="multi-step-form-container"> -->
+                    <!-- Form Steps / Progress Bar -->
+                    <!-- <ul class="form-stepper form-stepper-horizontal text-center mx-auto pl-0 py-4" style="margin-bottom: 0px;">
+                      
+                        <li class="form-stepper-active text-center form-stepper-list" step="1">
+                            <a class="mx-2">
+                                <span class="form-stepper-circle">
+                                    <span>1</span>
+                                </span>
+                                <div class="label">Select ERP Modules</div>
+                            </a>
+                        </li>
+                  
+                        <li class="form-stepper-unfinished text-center form-stepper-list" step="2">
+                            <a class="mx-2">
+                                <span class="form-stepper-circle text-muted">
+                                    <span>2</span>
+                                </span>
+                                <div class="label text-muted">Customer Details</div>
+                            </a>
+                        </li>
+                
+                        <li class="form-stepper-unfinished text-center form-stepper-list" step="3">
+                            <a class="mx-2">
+                                <span class="form-stepper-circle text-muted">
+                                    <span>3</span>
+                                </span>
+                                <div class="label text-muted">Submit</div>
+                            </a>
+                        </li>
+                    </ul> -->
+                    <!-- Step Wise Form Content -->
+                    <form id="userAccountSetupForm" name="userAccountSetupForm" enctype="multipart/form-data" method="POST">
+                        <!-- Step 1 Content -->
+                        <section id="step-1" class="form-step">
                           
-                                                <div>
-                                                    <button class="btn btn-primary btn-navigate-form-step full-width" step_number="2" id="entertech-buy" style="width: 100%;">
-                                                        Get started
-                                                    </button> 
-                                                </div>                                                   
-                                            </div>      
-                                        </div>  
-                                    </div>
-                  
-                                </div>
-                            </div>                
-                        </div>
-                        
-                        <div class="row business-techs pt-1 justify-content-evenly ">
-                            <div class="col-md-4" style="border-radius: 25px;">
-                                <div class="bg-pricing-2 pricing-box border  py-5 px-4 px-md-5 h-100" style="box-shadow: rgba(139, 138, 138, 0.35) 0px 5px 15px;">
-                                    <!-- <h2 class="head-title" style="color: #ffbc3b; font-size: 30px;">Integrated Education</h2> -->
-                                    <!-- <h3 class="mb-xl-0 mb-lg-2 mb-0">Integrated Education</h3> -->
-                                    <h3 class="mb-xl-0 mb-lg-4" >Integrated Education</h3>
-                                    <p class="pt-4 text-stroke--primary">Education Management with LMS, Exam Management and Performance Analytics.</p>
-    
-                                    <div class="border-bottom pb-4 mt-4">
-                                        <span id="edufee_start">Starts at</span>
-                                        <!-- <h2 class="display-7 mb-0 edufee_total text-bold pt-2" style="display: none;">$200</h2> -->
-                                        <h2 class="display-7 mb-0  text-bold" id='edufee' style="display: block;">$200</h2>            
-                                        <p class="mb-0 text-muted" id="edufee_per">per month</p>
-                                    </div>
-    
-                                    <div class="border-bottom  py-0">                                        
-                                        <div class="input-text">                                              
-                                            <div class="input-div d-flex justify-content-between">
-                                                <label for="edu-users-interval">Payment Interval</label><br>
-                                                
-                                                <select name="edu-users-interval" id="eduusers-intervals" style="background: inherit;" 
-                                                onclick="module_fee()">
-                                                    <option value="null" selected disabled>Choose one...</option>
-                                                    <option  value="Monthly" selected>Monthly</option>
-                                                    <option value="Quarterly">Quarterly</option>
-                                                    <option value="Annually">Annually</option>
-                                                </select>                                                        
-                                            </div>                                                            
-                                        </div>                                                                   
+                            <div class="row business-techs pt-0 justify-content-evenly ">
+                                <div class="col-md-12" >
                                 
-                                        <div class="input-text" style=" padding: 0px; margin: 0px;">
-                                            <div class="input-div d-flex justify-content-end"  > 
-                                                <label class="label" id="lbledustud_no" for="edustud_no" style="font-size: 14px;">$0.5/student per month</label>
-                                                <input class="input-field" style="width: 75px; align-items: right;" type="number" required value="100" id="edustud_no">
-                                                
-                                            </div>
-                                        </div>
+                                    <div class="bg-pricing-2 pricing-box border py-4 px-4 px-md-5 h-100" style="box-shadow: rgba(139, 138, 138, 0.35) 0px 5px 15px; padding-top: 4px;">
+                                        <!-- <h4 class="head-title" style="color: #ffbc3b; font-size: 25px; font-weight: 400;">Enterprise Tech</h4> -->
+                                        <h3 class="mb-xl-0 mb-lg-4" >Enterprise Tech</h3>
+                                        <p class="pt-3 text-secondary">For business efficiency and access to finance for business growth and employment creation.</p>
     
-                                    </div>
-
-                                    <div class="py-1">                                    
-                                        <h5 class="head-title py-1"style="color: #ffbc3b;">Available Modules</h5>   
-                                                                          
-                                        <ul class="py-1" style="list-style-type: none; ">
-                                            <li><label style=" margin-bottom: 10px;">&#x2705;  Stock Management</label><br></li>
-                                            <li><label style="margin-bottom: 10px">&#x2705;  Finance</label><br></li>
-                                            <li><label style="margin-bottom: 10px">&#x2705;  Human Resource</label><br></li>
-                                            <li><label style="margin-bottom: 10px">&#x2705;  Payroll</label><br></li>
-
-                                        </ul> 
-                                    </div>
-                                    
-                                    <div class="py-0">
-                                        <!-- <button class="btn btn-primary full-width " id="entertech-buy" style="width: 100%; ">
-                                            Get started
-                                        </button>    -->
-
-                                        <button class="btn btn-primary btn-navigate-form-step full-width" step_number="2" id="entertech-buy" style="width: 100%;">
-                                            Get started
-                                        </button>   
-                        
-                                    </div>  
-                                    
-                                    <!-- <a href="javascript:void(0)" class="btn btn-info text-white full-width" style="width: 100%;">Sign Up</a> -->
-                                </div>
-                            </div>
-    
-                            <!-- Integrated Manufacturing -->
-    
-                            <div class="col-md-4" style="border-radius: 25px;">
-                                <div class="bg-pricing-2 pricing-box border py-5 px-4 px-md-5 h-100" style="box-shadow: rgba(139, 138, 138, 0.35) 0px 5px 15px;">
-                                    <!-- <h2 class="fw-normal">Integrated Manufacturing</h2> -->
-                                    <h3 class="mb-xl-0 mb-lg-4" >Manufacturing</h3>
-                                    <p class="pt-4 text-stroke--primary">Manufacturing processes including Inventory, Quality, CRM and Asset Management.</p>
-    
-                                    <div class="border-bottom pb-4 mt-4">
-                                        <span id="manfee_start"> Starts at</span>
-                                        <h2 class="display-7 mb-0  text-bold" id = "manfee" style="display: block;">$200</h2>
-    
-                                        <p class="mb-0 text-muted" id="manfee_per">per month</p>
-                                    </div>
-
-    
-                                    <div class="border-bottom py-1">                                        
-                                        <div class="input-text">                                              
-                                            <div class="input-div d-flex justify-content-between">
-                                                <label for="manusers-intervals">Payment Interval</label><br>
-                                                <!-- <select name="edu-users display block" id="eduusers-users"> -->
-                                                <select name="man-users-interval" id="manusers-intervals" style="background: inherit;"
-                                                onclick="module_fee()">
-                                                    <option value="null" selected disabled>Choose one...</option>
-                                                    <option  value="Monthly" selected>Monthly</option>
-                                                    <option value="Quarterly">Quarterly</option>
-                                                    <option value="Annually">Annually</option>
-                                                </select>                                                        
-                                            </div>                                                            
-                                        </div>
-                                
-                                    </div>
-    
-                                    <div class="py-3 ">                                    
-                                        <h5 class="head-title py-1"style="color: #ffbc3b;">Available Modules</h5>   
-                                                                          
-                                        <ul class="py-2" style="list-style-type: none; ">
-                                            
-                                            <li><label style="margin-bottom: 10px">&#x2705;  Finance</label><br></li>
-                                            <li><label style="margin-bottom: 10px">&#x2705;  Human Resource</label><br></li>
-                                            <li><label style="margin-bottom: 10px">&#x2705;  Payroll</label><br></li>
-                                            <li><label style="margin-bottom: 10px">&#x2705;  Project Management</label><br></li>
-
-                                        </ul> 
-                                    </div>
-                                    <div class="py-0">
-                        
-                                        <button class="btn btn-primary btn-navigate-form-step full-width" step_number="2" id="entertech-buy" style="width: 100%;">
-                                            Get started
-                                        </button>   
-                        
-                                    </div>   
-                                    <!-- <a href="javascript:void(0)" class="btn btn-info text-white full-width" style="width: 100%;">Sign Up</a> -->
-                                </div>
-                            </div>
-    
-                                <!-- Integrated Manufacturing -->
-
-                            
-    
-                            <!-- Integrated Health -->
-    
-                            <div class="col-md-4" style="border-radius: 25px;">
-                                <div class="bg-pricing-2 pricing-box border  py-5 px-4 px-md-5 h-100" style="box-shadow: rgba(139, 138, 138, 0.35) 0px 5px 15px;">
-                                    <!-- <h2 class="head-title" style="color: #ffbc3b; font-size: 30px;">Integrated Healthcare</h2> -->
-                                    <h3 class="mb-xl-0 mb-lg-4" >Integrated Healthcare</h3>
-                                    <p class="pt-4 text-stroke--primary">Heathcare Facility and Patient Management with Rehabilitation and physiotherapy.</p>
-    
-                                    <div class="border-bottom pb-4 mt-4">
-                                        <span id="medfee_start">Starts at</span>
-                                        <h2 class="display-7 mb-0  text-bold" id = "healthfee" style="display: block;">$200</h2>
-    
-                                        <p class="mb-0 text-muted" id="medfee_per">per month</p>
-                                    </div>
-    
-                                    <div class="border-bottom py-1">                                        
-                                        <div class="input-text">                                              
-                                            <div class="input-div d-flex justify-content-between">
-                                                <label for="husers-intervals">Payment Interval</label><br>
-                                                <!-- <select name="edu-users display block" id="eduusers-users"> -->
-                                                <select name="husers-interval" id="husers-intervals" style="background: inherit;"
-                                                onclick="module_fee()">
-                                                    <option value="null" selected disabled>Choose one...</option>
-                                                    <option  value="Monthly" selected>Monthly</option>
-                                                    <option value="Quarterly">Quarterly</option>
-                                                    <option value="Annually">Annually</option>
-                                                </select>                                                        
-                                            </div>                                                            
+                                        <div class="row justify-content-end align-items-center">
+                                            <div class="col-md-7 border-0 bg-light-gray">                            
+                                                <div class="py-1">      
+                                                    <h5 class="head-title p-0"style="color: #ffbc3b;">Select Modules</h5>  
+                                                                              
+                                                    <ul class="py-3" style="list-style-type: none; " onclick="module_fee()" >
+                                                        <li style="margin-top: 0px;">
+                                                            <input type="checkbox" id="enttech-account" name="ent-tech-account" 
+                                                            value="Accounting" >
+                                                            <label for="ent-tech-account" style="padding-left: 5px;"> Accounting</label><br>
+                                                            <!-- <id="enttechaccount" style="display:none">Checkbox is CHECKED!</p>  -->
+                                                        </li>
+                                                        <!-- <span>&nbsp;</span> -->
+                                                        <li style="margin-top: 5px;">
+                                                            <input type="checkbox" id="enttech-hr" name="ent-tech-hr" 
+                                                            value="HR and Payroll" >
+                                                            <label for="ent-tech-hr" style="padding-left: 5px;" > HR and Payroll</label><br>
+                                                        </li>
+                                                        <li style="margin-top: 5px;">
+                                                            <input type="checkbox" id="enttech-stock" name="ent-tech-inventory" value="Stock and Inventory">
+                                                            <label for="ent-tech-inventory" style="padding-left: 5px;"> Stock and Inventory</label><br>
+                                                        </li>
+                                                        <li style="margin-top: 5px;">
+                                                            <input type="checkbox" id="enttech-loan" name="ent-tech-loan" value="Loan Management">
+                                                            <label for="ent-tech-loan" style="padding-left: 5px;"> Loan Management</label><br>
+                                                        </li>
+                                                        <li style="margin-top: 5px;">
+                                                            <input type="checkbox" id="enttech-project" name="ent-tech-project" value="Project Mnagaement">
+                                                            <label for="ent-tech-project" style="padding-left: 5px;"> Project Management</label><br>
+                                                        </li>
+                                                    </ul>                                                                    
+                                                </div>      
+                                            </div>  
+        
+                                            <div class="col-md-5 ">                            
+                                                <div class="p-2 border-5 bg-color-white">  
+                                                                                          
+                                                    <span id="entfee_start">Starts at</span>
+                                                        <!-- <h2 class="display-7 mb-0  text-bold pt-2" id="entamt" name="entasmt" style="display: none;">$30</h2> -->
+                                                        <h2 class="display-7 mb-0  text-bold" id="entamt" name="enstamt" style="display: block;">$30</h2>
+                                                        <p class="mb-0 text-muted" id="entfee_per">per month</p>
+                                                    <div class="input-text">                                            
+                                                        <div class="input-div">
+                                                            <label for="entertech-interval">Payment Interval</label><br>
+            
+                                                            <select name="entertech-interval" id="entertech-intervals" style="background: inherit;" onclick="module_fee()">
+                                                                <option value="null" selected disabled>Choose one...</option>
+                                                                <option value="Monthly" selected>Monthly</option>
+                                                                <option value="Quarterly">Quarterly</option>
+                                                                <option value="Annually">Annually</option>
+                                                            </select>           
+                                                        </div>     
+                                                        <div class="flex">
+                                                            <label for="entertech-user">Users</label>
+                                                          
+                                                            <input type="number" id="entertech-user" name="entertech-user" min="0" max="5000" value="5" disabled style="width: 100%;"> 
+                                                        </div>                                                        
+                                                    </div>                                     
+                              
+                                                    <div>
+                                                        <button class="btn btn-primary btn-navigate-form-step full-width" step_number="2" id="entertech-buy" style="width: 100%;">
+                                                            Get started
+                                                        </button> 
+                                                    </div>                                                   
+                                                </div>      
+                                            </div>  
                                         </div>
                       
                                     </div>
-    
-                                    <div class="py-3">                                    
-                                        <h5 class="head-title py-1"style="color: #ffbc3b;">Available Modules</h5>   
-                                                                          
-                                        <ul class="py-2" style="list-style-type: none; ">
-                                            
-                                            <li><label style="margin-bottom: 10px">&#x2705;  In/Out-patient</label><br></li>
-                                            <li><label style="margin-bottom: 10px">&#x2705;  Laboratory</label><br></li>
-                                            <li><label style="margin-bottom: 10px">&#x2705;  Pharmacy</label><br></li>
-                                            <li><label style="margin-bottom: 10px">&#x2705;  Billing and Digital Payments</label><br></li>
-
-                                        </ul> 
-                                    </div>
-                                    <div class="py-0">
-                                        <!-- <button class="btn btn-primary full-width " id="entertech-buy" style="width: 100%; ">
-                                            Get started
-                                        </button>    -->
-
-                                        <button class="btn btn-primary btn-navigate-form-step full-width" step_number="2" id="entertech-buy" style="width: 100%;">
-                                            Get started
-                                        </button>   
-                        
-                                    </div>   
-                                    <!-- <a href="javascript:void(0)" class="btn btn-info text-white full-width" style="width: 100%;">Sign Up</a> -->
-                                </div>
+                                </div>                
                             </div>
-                                <!-- Integrated Health -->
-                        </div> 
-
-                        
-                    </section>
-                    <!-- Step 2 Content, default hidden on page load. -->
-                    <section id="step-2" class="form-step d-none">
-                        <!-- <h2 class="font-normal">Customer Information</h2> -->
-                        <div class="container" >
-                            <div class="card">
-                                <div class="form">
-                                    <div class="left-side">
-                                        <div class="left-heading">
-                                            <h3>Customer Information</h3>
+                            
+                            <div class="row business-techs pt-1 justify-content-evenly ">
+                                <div class="col-md-4" style="border-radius: 25px;">
+                                    <div class="bg-pricing-2 pricing-box border  py-5 px-4 px-md-5 h-100" style="box-shadow: rgba(139, 138, 138, 0.35) 0px 5px 15px;">
+                                        <!-- <h2 class="head-title" style="color: #ffbc3b; font-size: 30px;">Integrated Education</h2> -->
+                                        <!-- <h3 class="mb-xl-0 mb-lg-2 mb-0">Integrated Education</h3> -->
+                                        <h3 class="mb-xl-0 mb-lg-4" >Integrated Education</h3>
+                                        <p class="pt-4 text-stroke--primary">Education Management with LMS, Exam Management and Performance Analytics.</p>
+        
+                                        <div class="border-bottom pb-4 mt-4">
+                                            <span id="edufee_start">Starts at</span>
+                                            <!-- <h2 class="display-7 mb-0 edufee_total text-bold pt-2" style="display: none;">$200</h2> -->
+                                            <h2 class="display-7 mb-0  text-bold" id='edufee' style="display: block;">$200</h2>            
+                                            <p class="mb-0 text-muted" id="edufee_per">per month</p>
                                         </div>
-                                  
-                                        <ul class="progress-bar">
-                                            <li class="active">Company </li>
-                                            <li  class="active">Contact Person</li>
-                                            <li  class="active">Domain </li>
-                                            <li class="active">Submit </li>
-                                            <span>&nbsp;</span>
-                                            <span>&nbsp;</span>                                                        
-                                        </ul>
-                                                                
-                                    </div>
-                                    <div class="right-side">
-                                        <div class="main active">
-                                            <div class="text border">
-                                                <h5>Company Information</h5>
-                                      
-                                                <div class="input-text">
-                                                    <div class="input-div">
-                                                        <input type="text" required require id="user_name">
-                                                        <span>Company Name</span>
-                                                    </div>
-                                                    <div class="input-div"> 
-                                                        <input type="text" required>
-                                                        <span>Bank Name</span>
-                                                    </div>
-                                                    <div class="input-div">
-                                                        <select>
-                                                            <option>Select Country</option>
-                                                            <option>Kenya</option>
-                                                            <option>Zambia</option>
-                                                            <option>South Africa</option>                                                  
-                                                        </select>
+        
+                                        <div class="border-bottom  py-0">                                        
+                                            <div class="input-text">                                              
+                                                <div class="input-div d-flex justify-content-between">
+                                                    <label for="edu-users-interval">Payment Interval</label><br>
                                                     
+                                                    <select name="edu-users-interval" id="eduusers-intervals" style="background: inherit;" 
+                                                    onclick="module_fee()">
+                                                        <option value="null" selected disabled>Choose one...</option>
+                                                        <option  value="Monthly" selected>Monthly</option>
+                                                        <option value="Quarterly">Quarterly</option>
+                                                        <option value="Annually">Annually</option>
+                                                    </select>                                                        
+                                                </div>                                                            
+                                            </div>                                                                   
+                                    
+                                            <div class="input-text" style=" padding: 0px; margin: 0px;">
+                                                <div class="input-div d-flex justify-content-end"  > 
+                                                    <label class="label" id="lbledustud_no" for="edustud_no" style="font-size: 14px;">$0.5/student per month</label>
+                                                    <input class="input-field" style="width: 75px; align-items: right;" type="number" required value="100" id="edustud_no">
+                                                    
+                                                </div>
+                                            </div>
+        
+                                        </div>
+    
+                                        <div class="py-1">                                    
+                                            <h5 class="head-title py-1"style="color: #ffbc3b;">Available Modules</h5>   
+                                                                              
+                                            <ul class="py-1" style="list-style-type: none; ">
+                                                <li><label style=" margin-bottom: 10px;">&#x2705;  Stock Management</label><br></li>
+                                                <li><label style="margin-bottom: 10px">&#x2705;  Finance</label><br></li>
+                                                <li><label style="margin-bottom: 10px">&#x2705;  Human Resource</label><br></li>
+                                                <li><label style="margin-bottom: 10px">&#x2705;  Payroll</label><br></li>
+    
+                                            </ul> 
+                                        </div>
+                                        
+                                        <div class="py-0">
+                                            <!-- <button class="btn btn-primary full-width " id="entertech-buy" style="width: 100%; ">
+                                                Get started
+                                            </button>    -->
+    
+                                            <button class="btn btn-primary btn-navigate-form-step full-width" step_number="2" id="entertech-buy" style="width: 100%;">
+                                                Get started
+                                            </button>   
+                            
+                                        </div>  
+                                        
+                                        <!-- <a href="javascript:void(0)" class="btn btn-info text-white full-width" style="width: 100%;">Sign Up</a> -->
+                                    </div>
+                                </div>
+        
+                                <!-- Integrated Manufacturing -->
+        
+                                <div class="col-md-4" style="border-radius: 25px;">
+                                    <div class="bg-pricing-2 pricing-box border py-5 px-4 px-md-5 h-100" style="box-shadow: rgba(139, 138, 138, 0.35) 0px 5px 15px;">
+                                        <!-- <h2 class="fw-normal">Integrated Manufacturing</h2> -->
+                                        <h3 class="mb-xl-0 mb-lg-4" >Manufacturing</h3>
+                                        <p class="pt-4 text-stroke--primary">Manufacturing processes including Inventory, Quality, CRM and Asset Management.</p>
+        
+                                        <div class="border-bottom pb-4 mt-4">
+                                            <span id="manfee_start"> Starts at</span>
+                                            <h2 class="display-7 mb-0  text-bold" id = "manfee" style="display: block;">$200</h2>
+        
+                                            <p class="mb-0 text-muted" id="manfee_per">per month</p>
+                                        </div>
+    
+        
+                                        <div class="border-bottom py-1">                                        
+                                            <div class="input-text">                                              
+                                                <div class="input-div d-flex justify-content-between">
+                                                    <label for="manusers-intervals">Payment Interval</label><br>
+                                                    <!-- <select name="edu-users display block" id="eduusers-users"> -->
+                                                    <select name="man-users-interval" id="manusers-intervals" style="background: inherit;"
+                                                    onclick="module_fee()">
+                                                        <option value="null" selected disabled>Choose one...</option>
+                                                        <option  value="Monthly" selected>Monthly</option>
+                                                        <option value="Quarterly">Quarterly</option>
+                                                        <option value="Annually">Annually</option>
+                                                    </select>                                                        
+                                                </div>                                                            
+                                            </div>
+                                    
+                                        </div>
+        
+                                        <div class="py-3 ">                                    
+                                            <h5 class="head-title py-1"style="color: #ffbc3b;">Available Modules</h5>   
+                                                                              
+                                            <ul class="py-2" style="list-style-type: none; ">
+                                                
+                                                <li><label style="margin-bottom: 10px">&#x2705;  Finance</label><br></li>
+                                                <li><label style="margin-bottom: 10px">&#x2705;  Human Resource</label><br></li>
+                                                <li><label style="margin-bottom: 10px">&#x2705;  Payroll</label><br></li>
+                                                <li><label style="margin-bottom: 10px">&#x2705;  Project Management</label><br></li>
+    
+                                            </ul> 
+                                        </div>
+                                        <div class="py-0">
+                            
+                                            <button class="btn btn-primary btn-navigate-form-step full-width" step_number="2" id="entertech-buy" style="width: 100%;">
+                                                Get started
+                                            </button>   
+                            
+                                        </div>   
+                                        <!-- <a href="javascript:void(0)" class="btn btn-info text-white full-width" style="width: 100%;">Sign Up</a> -->
+                                    </div>
+                                </div>
+        
+                                    <!-- Integrated Manufacturing -->
+    
+                                
+        
+                                <!-- Integrated Health -->
+        
+                                <div class="col-md-4" style="border-radius: 25px;">
+                                    <div class="bg-pricing-2 pricing-box border  py-5 px-4 px-md-5 h-100" style="box-shadow: rgba(139, 138, 138, 0.35) 0px 5px 15px;">
+                                        <!-- <h2 class="head-title" style="color: #ffbc3b; font-size: 30px;">Integrated Healthcare</h2> -->
+                                        <h3 class="mb-xl-0 mb-lg-4" >Integrated Healthcare</h3>
+                                        <p class="pt-4 text-stroke--primary">Heathcare Facility and Patient Management with Rehabilitation and physiotherapy.</p>
+        
+                                        <div class="border-bottom pb-4 mt-4">
+                                            <span id="medfee_start">Starts at</span>
+                                            <h2 class="display-7 mb-0  text-bold" id = "healthfee" style="display: block;">$200</h2>
+        
+                                            <p class="mb-0 text-muted" id="medfee_per">per month</p>
+                                        </div>
+        
+                                        <div class="border-bottom py-1">                                        
+                                            <div class="input-text">                                              
+                                                <div class="input-div d-flex justify-content-between">
+                                                    <label for="husers-intervals">Payment Interval</label><br>
+                                                    <!-- <select name="edu-users display block" id="eduusers-users"> -->
+                                                    <select name="husers-interval" id="husers-intervals" style="background: inherit;"
+                                                    onclick="module_fee()">
+                                                        <option value="null" selected disabled>Choose one...</option>
+                                                        <option  value="Monthly" selected>Monthly</option>
+                                                        <option value="Quarterly">Quarterly</option>
+                                                        <option value="Annually">Annually</option>
+                                                    </select>                                                        
+                                                </div>                                                            
+                                            </div>
+                          
+                                        </div>
+        
+                                        <div class="py-3">                                    
+                                            <h5 class="head-title py-1"style="color: #ffbc3b;">Available Modules</h5>   
+                                                                              
+                                            <ul class="py-2" style="list-style-type: none; ">
+                                                
+                                                <li><label style="margin-bottom: 10px">&#x2705;  In/Out-patient</label><br></li>
+                                                <li><label style="margin-bottom: 10px">&#x2705;  Laboratory</label><br></li>
+                                                <li><label style="margin-bottom: 10px">&#x2705;  Pharmacy</label><br></li>
+                                                <li><label style="margin-bottom: 10px">&#x2705;  Billing and Digital Payments</label><br></li>
+    
+                                            </ul> 
+                                        </div>
+                                        <div class="py-0">
+                                            <!-- <button class="btn btn-primary full-width " id="entertech-buy" style="width: 100%; ">
+                                                Get started
+                                            </button>    -->
+    
+                                            <button class="btn btn-primary btn-navigate-form-step full-width" step_number="2" id="entertech-buy" style="width: 100%;">
+                                                Get started
+                                            </button>   
+                            
+                                        </div>   
+                                        <!-- <a href="javascript:void(0)" class="btn btn-info text-white full-width" style="width: 100%;">Sign Up</a> -->
+                                    </div>
+                                </div>
+                                    <!-- Integrated Health -->
+                            </div> 
+    
+                            
+                        </section>
+                        <!-- Step 2 Content, default hidden on page load. -->
+                        <section id="step-2" class="form-step d-none">
+                            <!-- <h2 class="font-normal">Customer Information</h2> -->
+                            <div class="container" >
+                                <div class="card">
+                                    <div class="form">
+                                        <div class="left-side">
+                                            <div class="left-heading">
+                                                <h3>Customer Information</h3>
+                                            </div>
+                                      
+                                            <ul class="progress-bar">
+                                                <li class="active">Company </li>
+                                                <li  class="active">Contact Person</li>
+                                                <li  class="active">Domain </li>
+                                                <li class="active">Submit </li>
+                                                <span>&nbsp;</span>
+                                                <span>&nbsp;</span>                                                        
+                                            </ul>
+                                                                    
+                                        </div>
+                                        <div class="right-side">
+                                            <div class="main active">
+                                                <div class="text border">
+                                                    <h5>Company Information</h5>
+                                          
+                                                    <div class="input-text">
+                                                        <div class="input-div">
+                                                            <input type="text" required require id="user_name">
+                                                            <span>Company Name</span>
+                                                        </div>
+                                                        <div class="input-div"> 
+                                                            <input type="text" required>
+                                                            <span>Bank Name</span>
+                                                        </div>
+                                                        <div class="input-div">
+                                                            <select>
+                                                                <option>Select Country</option>
+                                                                <option>Kenya</option>
+                                                                <option>Zambia</option>
+                                                                <option>South Africa</option>                                                  
+                                                            </select>
+                                                        
+                                                        </div>
                                                     </div>
+                                                    <div class="input-text">
+                                                        <div class="input-div">
+                                                            <input type="text" required>
+                                                            <span>Phone number</span>
+                                                        </div>
+                                                        <div class="input-div">
+                                                            <input type="text" required require>
+                                                            <span>E-mail Address</span>
+                                                        </div>
+                                                        <div class="input-div">                                                                    
+                                                            <select>
+                                                                <option>Select Industry</option>
+                                                                <option>Accounting</option>
+                                                                <option>Education</option>
+                                                                <option>Manufacturing</option>
+                                                                <option>Healthcare</option>
+                                                                <option>Agriculture</option>
+                                                                <option>Real Estate</option>
+                                                                <option>Construction</option>
+                                                                <option>Technology</option>
+                                              
+                                                            </select>
+                                                        </div>
+                                                        
+                                                    </div>
+                                                    <div class="input-text">
+                                                        <div class="input-div">
+                                                            <input type="text" required>
+                                                            <span>Tax Number</span>
+                                                        </div>
+                                                        <div class="input-div">
+                                                            <input type="text" required require>
+                                                            <span>Domain</span>
+                                                            
+                                                        </div>
+                                                        <div class="input-div disabled">
+                                                            <!-- <input type="text" disabled required require> -->
+                                                            <label style="margin-left: -5px; gap: 0px;" >.kindatech.group</label>
+                                                            <!-- <span>.kindatech.group</span> -->
+                                                        
+                                                        </div>
+                                                    </div>
+                                                    
+                                                </div>
+                                                <div class="buttons py-4">
+                                                  
+                                                    <button class="next_button">Next Step</button>
+                                                </div>
+                                            </div>
+                                            
+                                            <div class="main">
+                                        
+                                                <div class="text">
+                                                    <h2>Contact Person </h2>
+                                                    <h4></h4>
                                                 </div>
                                                 <div class="input-text">
                                                     <div class="input-div">
-                                                        <input type="text" required>
-                                                        <span>Phone number</span>
+                                                        <input type="text" required require>
+                                                        <span>Name</span>
                                                     </div>
+                                                    <div class="input-div"> 
+                                                        <input type="text" required>
+                                                        <span>Phone Number</span>
+                                                    </div>
+                                                </div>
+                                                <div class="input-text">
                                                     <div class="input-div">
                                                         <input type="text" required require>
                                                         <span>E-mail Address</span>
                                                     </div>
-                                                    <div class="input-div">                                                                    
-                                                        <select>
-                                                            <option>Select Industry</option>
-                                                            <option>Accounting</option>
-                                                            <option>Education</option>
-                                                            <option>Manufacturing</option>
-                                                            <option>Healthcare</option>
-                                                            <option>Agriculture</option>
-                                                            <option>Real Estate</option>
-                                                            <option>Construction</option>
-                                                            <option>Technology</option>
-                                          
-                                                        </select>
-                                                    </div>
                                                     
-                                                </div>
-                                                <div class="input-text">
                                                     <div class="input-div">
                                                         <input type="text" required>
-                                                        <span>Tax Number</span>
-                                                    </div>
-                                                    <div class="input-div">
-                                                        <input type="text" required require>
-                                                        <span>Domain</span>
+                                                        <span>Job Title</span>
+                                                    </div>                                                            
+                                                </div>
+    
+                                                <div class="buttons button_space py-3">
+                                                    <button class="back_button">Back</button>
+                                                    <button class="next_button">Next Step</button>
+                                                </div>
+                                          
+                                            </div>
+                                            
+                                            <div class="main">
+                                                <div class="text">
+                                                    <h4>Sign Up Information Summary</h4>
+                                                    <h6>Confirm Details before Submit.</h6>
+                                                </div>
+                                                <div class="user_card">
+                                                    <span>Kindatech Inquiry Services</span>
+                                                    <!-- <h3>Kindatech </h3> -->
+                                                    
+                                                    <div class="social">
+                                                        <span><i class="fa fa-share-alt"></i></span>
+                                                        <span><i class="fa fa-heart"></i></span>
                                                         
                                                     </div>
-                                                    <div class="input-div disabled">
-                                                        <!-- <input type="text" disabled required require> -->
-                                                        <label style="margin-left: -5px; gap: 0px;" >.kindatech.group</label>
-                                                        <!-- <span>.kindatech.group</span> -->
-                                                    
+                                                    <div class="user_name">
+                                                        <!-- <h5>Kindatech </h5> -->
+                                                        <!-- <div class="detail">
+                                                            <p><a href="#">Izmar,Turkey</a>Hiring</p>
+                                                            <p>17 last day . 94Apply</p>
+                                                        </div> -->
                                                     </div>
                                                 </div>
+                                                <div class="buttons button_space">
+                                                    <button class="back_button">Back</button>
+                                                    <button class="submit_button">Submit</button>
+                                                </div>
+                                            </div>
+                                            <div class="main">
+                                                <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
+                                                    <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
+                                                    <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
+                                                </svg>
                                                 
+                                                <div class="text congrats">
+                                                    <h2 class="py-2">Success!</h2>
+                                                    <h5>Thank you <span class="shown_name"></span>. Your information have been submitted successfully. We will contact you soon.</h5>
+                                                </div>
                                             </div>
-                                            <div class="buttons py-4">
-                                              
-                                                <button class="next_button">Next Step</button>
-                                            </div>
+                    
                                         </div>
-                                        
-                                        <div class="main">
-                                    
-                                            <div class="text">
-                                                <h2>Contact Person </h2>
-                                                <h4></h4>
-                                            </div>
-                                            <div class="input-text">
-                                                <div class="input-div">
-                                                    <input type="text" required require>
-                                                    <span>Name</span>
-                                                </div>
-                                                <div class="input-div"> 
-                                                    <input type="text" required>
-                                                    <span>Phone Number</span>
-                                                </div>
-                                            </div>
-                                            <div class="input-text">
-                                                <div class="input-div">
-                                                    <input type="text" required require>
-                                                    <span>E-mail Address</span>
-                                                </div>
-                                                
-                                                <div class="input-div">
-                                                    <input type="text" required>
-                                                    <span>Job Title</span>
-                                                </div>                                                            
-                                            </div>
-
-                                            <div class="buttons button_space py-3">
-                                                <button class="back_button">Back</button>
-                                                <button class="next_button">Next Step</button>
-                                            </div>
-                                      
-                                        </div>
-                                        
-                                        <div class="main">
-                                            <div class="text">
-                                                <h4>Sign Up Information Summary</h4>
-                                                <h6>Confirm Details before Submit.</h6>
-                                            </div>
-                                            <div class="user_card">
-                                                <span>Kindatech Inquiry Services</span>
-                                                <!-- <h3>Kindatech </h3> -->
-                                                
-                                                <div class="social">
-                                                    <span><i class="fa fa-share-alt"></i></span>
-                                                    <span><i class="fa fa-heart"></i></span>
-                                                    
-                                                </div>
-                                                <div class="user_name">
-                                                    <!-- <h5>Kindatech </h5> -->
-                                                    <!-- <div class="detail">
-                                                        <p><a href="#">Izmar,Turkey</a>Hiring</p>
-                                                        <p>17 last day . 94Apply</p>
-                                                    </div> -->
-                                                </div>
-                                            </div>
-                                            <div class="buttons button_space">
-                                                <button class="back_button">Back</button>
-                                                <button class="submit_button">Submit</button>
-                                            </div>
-                                        </div>
-                                        <div class="main">
-                                            <svg class="checkmark" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52">
-                                                <circle class="checkmark__circle" cx="26" cy="26" r="25" fill="none"/>
-                                                <path class="checkmark__check" fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8"/>
-                                            </svg>
-                                            
-                                            <div class="text congrats">
-                                                <h2 class="py-2">Success!</h2>
-                                                <h5>Thank you <span class="shown_name"></span>. Your information have been submitted successfully. We will contact you soon.</h5>
-                                            </div>
-                                        </div>
-                
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="mt-3">
-                            <!-- <button class="button btn-navigate-form-step" type="button" step_number="1">Prev</button>
-                            <button class="button btn-navigate-form-step" type="button" step_number="3">Next</button> -->
-                        </div>
-                    </section>
-                    <!-- Step 3 Content, default hidden on page load. -->
-                    <section id="step-3" class="form-step d-none">
-                        <h2 class="font-normal">Personal Details</h2>
-                        <!-- Step 3 input fields -->
-                        <div class="mt-3">
-                            Step 3 input fields goes here..
-                        </div>
-                        <div class="mt-3">
-                            <!-- <button class="button btn-navigate-form-step" type="button" step_number="2">Prev</button>
-                            <button class="button submit-btn" type="submit">Save</button> -->
-                        </div>
-                    </section>
-                </form>
-            </div>
-      </div> 
-  </div>
-
-</section>
-
+                            <div class="mt-3">
+                                <!-- <button class="button btn-navigate-form-step" type="button" step_number="1">Prev</button>
+                                <button class="button btn-navigate-form-step" type="button" step_number="3">Next</button> -->
+                            </div>
+                        </section>
+                        <!-- Step 3 Content, default hidden on page load. -->
+                        <section id="step-3" class="form-step d-none">
+                            <h2 class="font-normal">Personal Details</h2>
+                            <!-- Step 3 input fields -->
+                            <div class="mt-3">
+                                Step 3 input fields goes here..
+                            </div>
+                            <div class="mt-3">
+                                <!-- <button class="button btn-navigate-form-step" type="button" step_number="2">Prev</button>
+                                <button class="button submit-btn" type="submit">Save</button> -->
+                            </div>
+                        </section>
+                    </form>
+                </div>
+          </div> 
+      </div>
+    
+    </section>
   
 
 {% endblock %}
