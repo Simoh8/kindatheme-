@@ -266,7 +266,7 @@
                 studfee_amt =  edustuds_no * costper_stud
                 edutotal_amt = 200 + studfee_amt
                     
-                document.getElementById("edufee_per").innerHTML = 'per month';
+                document.getElementById("edufee_per").innerHTML = 'per month for '+edustuds_no+' students';
                 document.getElementById("edufee_start").innerHTML = "Starts at"
                 //  document.getElementById("edufee_start").style.display = "none"
             }
@@ -274,13 +274,13 @@
                 studfee_amt =  edustuds_no * costper_stud * 3
                 edutotal_amt = 550 + studfee_amt
 
-                document.getElementById("edufee_per").innerHTML = 'per 3 months';
+                document.getElementById("edufee_per").innerHTML = 'per 3 months for '+edustuds_no+' students';
                 document.getElementById("edufee_start").innerHTML = "Estimate fee";
             }
             else if(edutech_intvl == 'Annually') {
                 studfee_amt =  edustuds_no * costper_stud * 12
-                edutotal_amt = 200 + studfee_amt
-                document.getElementById("edufee_per").innerHTML = 'per year';
+                edutotal_amt = 2100 + studfee_amt
+                document.getElementById("edufee_per").innerHTML = 'per year for '+edustuds_no+' students';
                 document.getElementById("edufee_start").innerHTML = "Estimate fee";
             }
             document.getElementById("edufee").innerHTML = '$'+edutotal_amt; 
