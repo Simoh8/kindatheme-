@@ -104,196 +104,249 @@
             
         }
 
-       
         
-            function geek() { 
-                var x = document.getElementById("entamt").innerHTML; 
-                var y = '393'
-                
-                document.getElementById("entamt").innerHTML = y; 
-                
-                document.getElementById("entamt").style.color = "green"; 
-                document.getElementById("p").innerHTML = y; 
-                
-                document.getElementById("p").style.color = "green"; 
-            } 
-        
+        function module_fee(){
+            var total_entamt = 0
+            var acc_amt = 0
+            var hr_amt = 0
+            var stock_amt = 0
+            var loan_amt = 0
+            var project_amt = 0
+            var crm_amt = 0
+            var entmonth_total = 0
+            var entqt_total = 0
+            var entyear_total = 0
 
-            function module_fee(){
-                var total_entamt = 0
-                var acc_amt = 0
-                var hr_amt = 0
-                var stock_amt = 0
-                var loan_amt = 0
-                var project_amt = 0
-                var entmonth_total = 0
-                var entqt_total = 0
-                var entyear_total = 0
+            var entpay_intvl = document.getElementById("entertech-intervals").value;    
+            var edutech_intvl = document.getElementById("eduusers-intervals").value;     
+            var mantech_intvl = document.getElementById("manusers-intervals").value; 
+            var healtech_intvl = document.getElementById("husers-intervals").value;
 
-                var entpay_intvl = document.getElementById("entertech-intervals").value;    
-                var edutech_intvl = document.getElementById("eduusers-intervals").value;     
-                var mantech_intvl = document.getElementById("manusers-intervals").value; 
-                var healtech_intvl = document.getElementById("husers-intervals").value;
-         
-                var entacc = document.getElementById("enttech-account");
-                var enthr = document.getElementById("enttech-hr");
-                var entstock = document.getElementById("enttech-stock");
-                var entloan = document.getElementById("enttech-loan");
-                var entsproject = document.getElementById("enttech-project");
+            var entacc = document.getElementById("enttech-account");
+            var enthr = document.getElementById("enttech-hr");
+            var entstock = document.getElementById("enttech-stock");
+            var entloan = document.getElementById("enttech-loan");
+            var entproject = document.getElementById("enttech-project");
+            var entcrm = document.getElementById("enttech-crm");
+            var entusers_no = document.getElementById("entertech-user").value;
+            var edustuds_no = document.getElementById("edustud_no").value;
 
-                var edutotal_amt = 0
-                var mantotal_amt = 0
-                var medtotal_amt = 0
-                var enttotal_amt = 0
+            var edutotal_amt = 0
+            var mantotal_amt = 0
+            var medtotal_amt = 0
+            var enttotal_amt = 0
+            var userfee_amt = 0
+            var studfee_amt = 0
+            var maxusers_fee = 5
+            var checked_mod = 0
 
-                var start_fee = 'Starts at'
-                var calc_fee = 'Estimate fee'
+            var costper_stud = 0.5
 
+            var start_fee = 'Starts at'
+            var calc_fee = 'Estimate fee'
 
-                if(entpay_intvl == 'Monthly') {
-                if (entacc.checked == true){
-                    acc_amt = 30
-                }
-                if (enthr.checked == true){
-                    hr_amt = 50
-                }
-                if (entstock.checked == true){
-                    stock_amt = 50
-                }
-                if (entloan.checked == true){
-                    loan_amt = 100
-                }
-                if (entsproject.checked == true){
-                    project_amt = 50
-                }
+            checked_mod = document.querySelectorAll('input[type="checkbox"]:checked').length;
 
-                entmonth_total = acc_amt+hr_amt+stock_amt+loan_amt+project_amt
-                if (entmonth_total == 0){
-                    entmonth_total = 30;
-                    document.getElementById("entfee_start").innerHTML = start_fee
-                }
-                else {document.getElementById("entfee_start").innerHTML = calc_fee}
-
-                document.getElementById("entamt").innerHTML = '$'+entmonth_total; 
-                document.getElementById("entfee_per").innerHTML = 'per month';
+            if(entpay_intvl == 'Monthly') {
+            if (entacc.checked == true){
+                acc_amt = 30
             }
-            else if(entpay_intvl == 'Quarterly') {
-                if (entacc.checked == true){
-                    acc_amt = 80
-                }
+            if (enthr.checked == true){
+                hr_amt = 50
+            }
+            if (entstock.checked == true){
+                stock_amt = 50
+            }
+            if (entloan.checked == true){
+                loan_amt = 100
+            }
+            if (entproject.checked == true){
+                project_amt = 50
+            }
+            if (entcrm.checked == true){
+                crm_amt = 30
+            }
 
-                if (enthr.checked == true){
-                    hr_amt = 120
+            if (entusers_no <= maxusers_fee){
+                userfee_amt = 0
+            }
+            else {
+                userfee_amt =  (entusers_no - maxusers_fee) * 1.5
+            }
+  
+            entmonth_total = acc_amt+crm_amt+hr_amt+stock_amt+loan_amt+project_amt+userfee_amt
+            if (entmonth_total == 0 || checked_mod == 0){
+                entmonth_total = 30;
+                document.getElementById("entfee_start").innerHTML = start_fee 
+            }
+            else {document.getElementById("entfee_start").innerHTML = calc_fee }
+
+            document.getElementById("entamt").innerHTML = '$'+entmonth_total; 
+            document.getElementById("entfee_per").innerHTML = 'per month for ' +entusers_no+' users';
+        }
+        else if(entpay_intvl == 'Quarterly') {
+            if (entacc.checked == true){
+                acc_amt = 80
+            }
+            if (entcrm.checked == true){
+                crm_amt = 80;                  
+            }
+            if (enthr.checked == true){
+                hr_amt = 120
+            }
+            if (entstock.checked == true){
+                stock_amt = 120
+            }
+            if (entloan.checked == true){
+                loan_amt = 280
+            }
+            if (entproject.checked == true){
+                project_amt = 120                    
+            }
+            if (entqt_total == 0){
+                entqt_total = 80;
                 }
-                if (entstock.checked == true){
-                    stock_amt = 120
-                }
-                if (entloan.checked == true){
-                    loan_amt = 280
-                }
-                if (entsproject.checked == true){
-                    project_amt = 120
+            
+            if (entusers_no <= maxusers_fee) {
+                userfee_amt = 0
+            }
+            else {
+                userfee_amt =  (entusers_no - maxusers_fee) * 4.5
+            }
+
+            entqt_total = acc_amt+crm_amt+hr_amt+stock_amt+loan_amt+project_amt+userfee_amt
+
+            if (entqt_total == 0  || checked_mod == 0){
+                entqt_total = 80;
+            }
+
+            document.getElementById("entamt").innerHTML = '$'+entqt_total; 
+            document.getElementById("entfee_per").innerHTML = 'per 3 months for ' +entusers_no+' users';
+            document.getElementById("entfee_start").innerHTML = calc_fee ;
+            }
+        else if(entpay_intvl == 'Annually') {
+            if (entacc.checked == true){
+                acc_amt = 300
+            }
+            if (entcrm.checked == true){
+                crm_amt = 300           
+            }
+            if (enthr.checked == true){
+                hr_amt = 450
+            }
+            if (entstock.checked == true){
+                stock_amt = 450
+            }
+            if (entloan.checked == true){
+                loan_amt = 1000
+            }
+            if (entproject.checked == true){
+                project_amt = 450
+            }
+
+            if (entusers_no <= maxusers_fee) {
+                userfee_amt = 0
+            }
+            else {
+                userfee_amt = (entusers_no - maxusers_fee) * 18
+            }
+
+            entyear_total = acc_amt+crm_amt+hr_amt+stock_amt+loan_amt+project_amt+userfee_amt
+            if (entyear_total == 0  || checked_mod == 0){
+                entyear_total = 300;
+            }
+
+            document.getElementById("entamt").innerHTML = '$'+entyear_total; 
+            document.getElementById("entfee_per").innerHTML = 'per year for ' +entusers_no+' users';
+            document.getElementById("entfee_start").innerHTML = calc_fee;
+        }
+            
+
+            if(edutech_intvl == 'Monthly') {                
+                studfee_amt =  edustuds_no * costper_stud
+                edutotal_amt = 200 + studfee_amt
                     
-                }
-
-                entqt_total = acc_amt+hr_amt+stock_amt+loan_amt+project_amt
-
-                if (entqt_total == 0){
-                    entqt_total = 80;
-                }
-
-                document.getElementById("entamt").innerHTML = '$'+entqt_total; 
-                document.getElementById("entfee_per").innerHTML = 'per 3 months';
-                document.getElementById("entfee_start").innerHTML = calc_fee;
+                document.getElementById("edufee_per").innerHTML = 'per month';
+                document.getElementById("edufee_start").innerHTML = "Starts at"
+                //  document.getElementById("edufee_start").style.display = "none"
             }
-            else if(entpay_intvl == 'Annually') {
-                if (entacc.checked == true){
-                    acc_amt = 300
-                }
-                if (enthr.checked == true){
-                    hr_amt = 450
-                }
-                if (entstock.checked == true){
-                    stock_amt = 450
-                }
-                if (entloan.checked == true){
-                    loan_amt = 1000
-                }
-                if (entsproject.checked == true){
-                    project_amt = 450
-                }
+            else if(edutech_intvl == 'Quarterly') {
+                studfee_amt =  edustuds_no * costper_stud * 3
+                edutotal_amt = 550 + studfee_amt
 
-                entyear_total = acc_amt+hr_amt+stock_amt+loan_amt+project_amt
-                if (entyear_total == 0){
-                    entyear_total = 300;
-                }
+                document.getElementById("edufee_per").innerHTML = 'per 3 months';
+                document.getElementById("edufee_start").innerHTML = "Estimate fee";
+            }
+            else if(edutech_intvl == 'Annually') {
+                studfee_amt =  edustuds_no * costper_stud * 12
+                edutotal_amt = 200 + studfee_amt
+                document.getElementById("edufee_per").innerHTML = 'per year';
+                document.getElementById("edufee_start").innerHTML = "Estimate fee";
+            }
+            document.getElementById("edufee").innerHTML = '$'+edutotal_amt; 
+            
 
-                document.getElementById("entamt").innerHTML = '$'+entyear_total; 
-                document.getElementById("entfee_per").innerHTML = 'per year';
-                document.getElementById("entfee_start").innerHTML = calc_fee;
+            if(mantech_intvl == 'Monthly') {
+                mantotal_amt = 200
+                document.getElementById("manfee_per").innerHTML = 'per month';
+                document.getElementById("manfee_start").innerHTML = "Starts at";
+            }
+            else if(mantech_intvl == 'Quarterly') {
+                mantotal_amt = 550
+                document.getElementById("manfee_per").innerHTML = 'per 3 months';
+                document.getElementById("manfee_start").innerHTML = "Estimate fee";
+            }
+            else if(mantech_intvl == 'Annually') {
+                mantotal_amt = 2100
+                document.getElementById("manfee_per").innerHTML = 'per year';
+                document.getElementById("manfee_start").innerHTML = "Estimate fee";
             }
                 
+            document.getElementById("manfee").innerHTML = '$'+mantotal_amt; 
+            
 
-                if(edutech_intvl == 'Monthly') {
-                    edutotal_amt = 200
-                     document.getElementById("edufee_per").innerHTML = 'per month';
-                     document.getElementById("edufee_start").innerHTML = "Starts at"
-                    //  document.getElementById("edufee_start").style.display = "none"
-
-                }
-                else if(edutech_intvl == 'Quarterly') {
-                    edutotal_amt = '550'
-                     document.getElementById("edufee_per").innerHTML = 'per 3 months';
-                      document.getElementById("edufee_start").innerHTML = "Estimate fee";
-                }
-                else if(edutech_intvl == 'Annually') {
-                    edutotal_amt = '2100'
-                     document.getElementById("edufee_per").innerHTML = 'per year';
-                     document.getElementById("edufee_start").innerHTML = "Estimate fee";
-                }
-                document.getElementById("edufee").innerHTML = '$'+edutotal_amt; 
-               
-
-                if(mantech_intvl == 'Monthly') {
-                    mantotal_amt = 200
-                    document.getElementById("manfee_per").innerHTML = 'per month';
-                    document.getElementById("manfee_start").innerHTML = "Starts at";
-                }
-                else if(mantech_intvl == 'Quarterly') {
-                    mantotal_amt = 550
-                    document.getElementById("manfee_per").innerHTML = 'per 3 months';
-                    document.getElementById("manfee_start").innerHTML = "Estimate fee";
-                }
-                else if(mantech_intvl == 'Annually') {
-                    mantotal_amt = 2100
-                    document.getElementById("manfee_per").innerHTML = 'per year';
-                    document.getElementById("manfee_start").innerHTML = "Estimate fee";
-                }
-                    
-                document.getElementById("manfee").innerHTML = '$'+mantotal_amt; 
-                
-
-                if(healtech_intvl == 'Monthly') {
-                    medtotal_amt = 200
-                    document.getElementById("medfee_per").innerHTML = 'per month';
-                    document.getElementById("medfee_start").innerHTML = "Starts at";
-                }
-                else if(healtech_intvl == 'Quarterly') {
-                    // console.log('Edu QT')
-                    medtotal_amt = '550'
-                    document.getElementById("medfee_per").innerHTML = 'per 3 mothns';
-                    document.getElementById("medfee_start").innerHTML = "Estimate fee";
-                }
-                else if(healtech_intvl == 'Annually') {
-                    // console.log('Edu Annual')
-                    medtotal_amt = '2100'
-                    document.getElementById("medfee_per").innerHTML = 'per year';
-                    document.getElementById("medfee_start").innerHTML = "Estimate fee";
-                }
-                
-                document.getElementById("healthfee").innerHTML = '$'+medtotal_amt; 
-                
+            if(healtech_intvl == 'Monthly') {
+                medtotal_amt = 200
+                document.getElementById("medfee_per").innerHTML = 'per month';
+                document.getElementById("medfee_start").innerHTML = "Starts at";
             }
+            else if(healtech_intvl == 'Quarterly') {
+                medtotal_amt = '550'
+                document.getElementById("medfee_per").innerHTML = 'per 3 mothns';
+                document.getElementById("medfee_start").innerHTML = "Estimate fee";
+            }
+            else if(healtech_intvl == 'Annually') {
+                medtotal_amt = '2100'
+                document.getElementById("medfee_per").innerHTML = 'per year';
+                document.getElementById("medfee_start").innerHTML = "Estimate fee";
+            }
+            
+            document.getElementById("healthfee").innerHTML = '$'+medtotal_amt; 
+            
+        }
+
+
+        function New_Customer_Details(){
+            var cname = document.getElementById("user_name").value
+            var email = document.getElementById("user_name").value
+            var seledom = document.getElementById("user_name").value
+            var price = document.getElementById("user_name").value
+
+        }
+
+        function SendEmail() {
+            Email.send({
+                Host : "smtp.elasticemail.com",
+                Username : "username",
+                Password : "password",
+                To : 'them@website.com',
+                From : "you@isp.com",
+                Subject : "This is the subject",
+                Body : "And this is the body"
+            }).then(
+                message => alert(message)
+            );
+        }
 
             function myFunction() {
             // Get the checkbox
