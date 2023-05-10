@@ -11,9 +11,12 @@
                     return false
                 }
             formnumber++;
+
+            console.log('Next Button Clicked...'+formnumber)
             updateform();
             progress_forward();
             contentchange();
+            customer_details()
             });
         }); 
 
@@ -27,29 +30,31 @@
             });
         });
 
-        var username=document.querySelector("#user_name");
-        var shownname=document.querySelector(".shown_name");
+        // var username=document.querySelector("#user_name");
+        // var shownname=document.querySelector(".shown_name");
+
+        // console.log('User name...'+username)
         
 
         var submit_click=document.querySelectorAll(".submit_button");
         submit_click.forEach(function(submit_click_form){
             submit_click_form.addEventListener('click',function(){
-            shownname.innerHTML= username.value;
+            // shownname.innerHTML= username.value;
             formnumber++;
             updateform(); 
             });
         });
 
-        var heart=document.querySelector(".fa-heart");
-        heart.addEventListener('click',function(){
-        heart.classList.toggle('heart');
-        });
+        // var heart=document.querySelector(".fa-heart");
+        // heart.addEventListener('click',function(){
+        // heart.classList.toggle('heart');
+        // });
 
 
-        var share=document.querySelector(".fa-share-alt");
-        share.addEventListener('click',function(){
-        share.classList.toggle('share');
-        });
+        // var share=document.querySelector(".fa-share-alt");
+        // share.addEventListener('click',function(){
+        // share.classList.toggle('share');
+        // });
 
         
 
@@ -326,11 +331,16 @@
         }
 
 
-        function New_Customer_Details(){
-            var cname = document.getElementById("user_name").value
-            var email = document.getElementById("user_name").value
-            var seledom = document.getElementById("user_name").value
-            var price = document.getElementById("user_name").value
+        function customer_details(){
+            alert("here we go....");
+            var comp_name = document.getElementById("comp_name").value
+            var comp_email = document.getElementById("comp_name").value
+            var contact_name = document.getElementById("user_name").value
+            var contact_email = document.getElementById("contact_email").value
+            // var seledom = document.getElementById("user_name").value
+            // var price = document.getElementById("user_name").value
+
+            console.log(comp_name+' '+comp_email+' '+contact_name)
 
         }
 
