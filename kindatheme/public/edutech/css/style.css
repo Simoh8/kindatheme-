@@ -114,12 +114,13 @@ h6, .h6 {
   z-index: 1;
   transition: .2s ease;
   overflow: hidden;
+  border-radius: 30px;
 }
 
 .btn::before {
   position: absolute;
   content: "";
-  height: 80%;
+  height: 100%;
   width: 100%;
   left: 0;
   bottom: 10%;
@@ -165,21 +166,21 @@ h6, .h6 {
 }
 
 .btn-primary::before {
-  background: #fff;
+  background: #f39406e3;
 }
 
 .btn-primary:active {
   background: #ffbc3b !important;
-  color: #ffbc3b;
+  color: #fff;
 }
 
 .btn-primary:active::before {
-  height: 80%;
+  height: 100%;
 }
 
 .btn-primary:hover {
   background: #ffab08;
-  color: #ffbc3b;
+  color: #fff;
 }
 
 .btn-primary:not(:disabled):not(.disabled).active,
@@ -192,12 +193,12 @@ h6, .h6 {
 
 .btn-secondary {
   background: #fff;
-  color: #ffbc3b;
+  color: #fff;
   border: 1px solid #fff;
 }
 
 .btn-secondary::before {
-  background: #ffbc3b;
+  background: #f39406e3;
 }
 
 .btn-secondary:active {
@@ -207,7 +208,7 @@ h6, .h6 {
 }
 
 .btn-secondary:hover {
-  background: #fff;
+  background: #ffbc3b;
   color: #fff;
   border: 1px solid #fff;
 }
@@ -917,8 +918,8 @@ link:focus,
 }
 
 .play-btn:hover::before {
-  height: 80%;
-  width: 80%;
+  height: 100%;
+  width: 100%;
   transition-delay: 0s;
 }
 
@@ -1055,6 +1056,11 @@ link:focus,
     border-color: #ffbc3b !important;
   }
 
+  .bg-pricing-2 .btn-secondary {
+    background: #ed8349;  
+    border-color: #ed8349 !important;
+  }
+
   .bg-pricing-2 .btn-primary:hover,
   .bg-pricing-2 .btn-primary:active,
   .bg-pricing-2 .btn-primary:focus,
@@ -1063,10 +1069,24 @@ link:focus,
   .bg-pricing-2 .btn-primary:not(:disabled):not(.disabled):active,
   .bg-pricing-2 .btn-primary:not(:disabled):not(.disabled):active:focus,
   .bg-pricing-2 .btn-primary .open>.dropdown-toggle.btn-primary {
-    background: #e19e1a;
-    border-color: #c98b19;
+    background: #ffbc3b;
+    border-color: #ffbc3b;
     box-shadow: rgba(139, 138, 138, 0.35) 0px 5px 15px;
   }
+
+  .bg-pricing-2 .btn-secondary:hover,
+  .bg-pricing-2 .btn-secondary:active,
+  .bg-pricing-2 .btn-secondary:focus,
+  .bg-pricing-2 .btn-secondary.active,
+  .bg-pricing-2 .btn-secondary.focus,
+  .bg-pricing-2 .btn-secondary:not(:disabled):not(.disabled):active,
+  .bg-pricing-2 .btn-secondary:not(:disabled):not(.disabled):active:focus,
+  .bg-pricing-2 .btn-secondary .open>.dropdown-toggle.btn-secondary {
+    background: #ffbc3b;
+    border-color: #ffbc3b;
+    box-shadow: rgba(139, 138, 138, 0.35) 0px 5px 15px;
+  }
+  
 
   .bg-pricing-2 .btn-outline-primary {
     color: #ef4853;

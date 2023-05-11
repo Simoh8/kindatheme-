@@ -4,7 +4,6 @@
 
 {% block content %}
 
-
 <section class="page-title-section overlay pb-0 px-0" style="margin-bottom: 0px;"  >
     <div class="container">
       <div class="row" >
@@ -16,6 +15,47 @@
       </div>
     </div>
   </section>
+
+  <!-- Modal -->
+    <div class="modal fade" id="orangeModalSubscription" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-notify modal-warning" role="document">
+            <!--Content-->
+            <div class="modal-content">
+                <!--Header-->
+                <div class="modal-header text-center">
+                    <h4 class="modal-title white-text w-100 font-weight-bold py-2">Get a demo</h4>                   
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true" class="white-text">&times;</span>
+                    </button>
+                </div>             
+
+                <div class="modal-body">
+                    <form role="form" method="POST" action="">
+                        <input type="hidden" name="_token" value="">
+                        <div class="form-group">
+                            <label class="control-label">Your Email </label>
+                            <div>
+                                <input type="email" class="form-control input-lg" name="email" value="">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Confirm Email</label>
+                            <div>
+                                <input type="email" class="form-control input-lg" name="email" value="" style="line-height: 15px;">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div>
+                                <button type="submit" class="btn btn-primary waves-effect">Send Request</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+
+            </div>
+                <!--/.Content-->
+        </div>
+    </div>
 
     <section class="section bg-pricing-2 py-0" id="step-1"  style="background-color: #efeff4; "  >
         <div class="container"  style="box-shadow: rgba(139, 138, 138, 0.35) 0px 5px 5px; margin-top: 0px; background-color: #fff;">
@@ -94,7 +134,8 @@
                                                             <label for="enttech-crm" style="padding-left: 5px;"> CRM</label><br>
                                                         </li>
                                                     </ul>                                                                    
-                                                </div>      
+                                                </div>     
+                                                 
                                             </div>  
 
                                             <div class="col-md-5 border-light" style="height: fit-content; ">                            
@@ -118,12 +159,25 @@
                                                             <input type="number" id="entertech-user" name="entertech-user" min="5" max="5000" value="5" 
                                                             style="width: 75%; height: 35px; text-indent: 10px; " onchange = "module_fee()"> 
                                                         </div>                                                        
-                                                    </div>    
-                                                    <div>
-                                                        <button class="btn btn-primary btn-navigate-form-step full-width mb-2" step_number="2" id="entertech-buy" style="width: 100%;">
-                                                            Get started
-                                                        </button> 
-                                                    </div>   
+                                                    </div>     
+
+                                                    <div class="btn justify-content-around" style="display: flex; gap: 25px;" >                                            
+                                                        <button class="btn btn-primary btn-navigate-form-step mb-2" step_number="2" id="entertech-buy" style="width: 50%;"> Subscribe</button>                                                     
+                                                        <button class="btn btn-secondary mb-2" data-toggle="modal" data-target="#orangeModalSubscription" id="entertech-buy" style="width: 50%;">Request demo</button>                                                   
+                                                        <!-- <button class="btn btn-secondary" data-toggle="modal" data-target="#orangeModalSubscription">Open Modal</button> -->
+                                                    </div>  
+
+                                                    <!-- <div class="buttons">
+                                                        <div class="action_btn">                                            
+                                                            <button name="submit" class="action_btn submit" type="submit" value="Save" onclick="myFunction()">Save</button>
+                                                            <button name="submit" class="action_btn cancel" type="submit" value="Cancel" onclick="myFunction2()">Cancel</button>
+                                                
+                                                            <p id="saved"></p>
+                                            
+                                                        </div>
+                                            
+                                                    </div> -->
+
                                                 </div>   
                                             </div>  
         
