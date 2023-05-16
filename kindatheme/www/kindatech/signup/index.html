@@ -35,18 +35,18 @@
                         <div class="form-group">
                             <label class="control-label">Your Email </label>
                             <div>
-                                <input type="email" class="form-control input-lg" name="email" value="">
+                                <input type="email" class="form-control input-lg" id="demo_email" name="email" required >
                             </div>
                         </div>
                         <div class="form-group">
                             <label class="control-label">Confirm Email</label>
                             <div>
-                                <input type="email" class="form-control input-lg" name="email" value="" style="line-height: 15px;">
+                                <input type="email" class="form-control input-lg" id="demo_cemail" name="email" required >
                             </div>
                         </div>
                         <div class="form-group">
                             <div>
-                                <button type="submit" class="btn btn-primary waves-effect">Send Request</button>
+                                <button type="submit" class="btn btn-primary waves-effect" onclick="customer_details()">Send Request</button>
                             </div>
                         </div>
                     </form>
@@ -377,32 +377,34 @@
                                                     <h5>Company Information</h5>                                          
                                                     <div class="input-text">
                                                         <div class="input-div">
-                                                            <input type="text" class="form-control" id="name" name="name" required>
+                                                            <input type="text" class="form-control" id="name" name="name" required require> 
                                                             <span>Company Name</span>
                                                         </div> 
                                                         <div class="input-div"> 
-                                                            <input type="text" class="form-control" id="comp_email" required>
+                                                            <input type="email" class="form-control" id="comp_email" require required>
+                                                            <!-- <input type="email" class="form-control input-lg" id="demo_cemail" name="email" required > -->
                                                             <span>Email Address</span>
                                                         </div>
 
                                                     </div>
                                                     <div class="input-text">
                                                         <div class="input-div">
-                                                            <div class="input-group">
-                                                                <input name="country_code" id="country_code" class="form-control" 
-                                                                 placeholder="254" type="text" style="max-width: 25%;">  
-                                                                <input name="co_phone" id="co_phone" class="form-control" placeholder="703785199" type="text">
-                                                                <span>Phone Number</span>
+                                                            <div class="form-group input-group">
+                                                               
+                                                                <input name="" class="form-control" type="text" id="domain" require required >
+                                                                <span>Preferred Domain</span>                                                                
+                                                                <input type="text" class="form-control" id="subdomain" value=".kindatech.group" disabled>
                                                             </div> 
                                                         </div>
                                                         <div class="input-div">
-                                                            <div class="form-group input-group">
-                                                               
-                                                                <input name="" class="form-control" placeholder="companyname" type="text">
-                                                                <span>Preferred Domain</span>                                                                
-                                                                <input type="text" class="form-control" id="domain" value=".kindatech.group" disabled required>
+                                                            <div class="input-group">
+                                                                <input name="country_code" id="country_code" class="form-control" 
+                                                                 placeholder="254" type="text" style="max-width: 25%;">  
+                                                                <input name="co_phone" id="comp_phone" class="form-control" placeholder="703785199" type="text">
+                                                                <span>Phone Number</span>
                                                             </div> 
                                                         </div>
+                                                        
                                                     </div>                                                 
 
                                                     <div class="input-text">
@@ -436,11 +438,11 @@
                                                     <h5>Contact Person </h5>                                          
                                                     <div class="input-text">
                                                         <div class="input-div">
-                                                            <input type="text" class="form-control" id="contact_person" name="contact_person" require required>
+                                                            <input type="text" class="form-control" id="contact_person" name="contact_person" required>
                                                             <span>Contact Person</span>
                                                         </div> 
                                                         <div class="input-div"> 
-                                                            <input type="text" class="form-control" id="contact_email" required require>
+                                                            <input type="email" class="form-control" id="contact_email" required>
                                                             <span>Email Address</span>
                                                         </div>
 
@@ -451,7 +453,7 @@
                                                             <span>Phone Number</span>
                                                         </div> 
                                                         <div class="input-div"> 
-                                                            <input type="text" class="form-control" id="contact_email" required>
+                                                            <input type="text" class="form-control" id="contact_design" required>
                                                             <span>Designation</span>
                                                         </div>
                                                     </div>                                                 
