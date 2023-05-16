@@ -12,7 +12,6 @@
                 }
             formnumber++;
 
-            console.log('Next Button Clicked...'+formnumber)
             updateform();
             progress_forward();
             contentchange();
@@ -40,9 +39,18 @@
         submit_click.forEach(function(submit_click_form){
             submit_click_form.addEventListener('click',function(){
             // shownname.innerHTML= username.value;
+            if(!validateform()){
+                return false
+            }
             formnumber++;
+            customer_details()
             updateform(); 
+
+
             });
+
+                // const elements2 = document.querySelectorAll('input');
+                // console.log(elements2);
         });
 
         // var heart=document.querySelector(".fa-heart");
@@ -54,9 +62,7 @@
         // var share=document.querySelector(".fa-share-alt");
         // share.addEventListener('click',function(){
         // share.classList.toggle('share');
-        // });
-
-        
+        // });       
 
         function updateform(){
             main_form.forEach(function(mainform_number){
@@ -94,6 +100,7 @@
         }
         
         function validateform(){
+            console.log('Validating ...')
             validate=true;
             var validate_inputs=document.querySelectorAll(".main.active input");
             validate_inputs.forEach(function(vaildate_input){
@@ -332,15 +339,20 @@
 
 
         function customer_details(){
-            alert("here we go....");
-            var comp_name = document.getElementById("comp_name").value
-            var comp_email = document.getElementById("comp_name").value
-            var contact_name = document.getElementById("user_name").value
+            var comp_name = document.getElementById("name").value
+            var comp_email = document.getElementById("comp_email").value
+            var comp_phone = document.getElementById("comp_phone").value
+            var pref_domain = document.getElementById("domain").value
+            var contact_name = document.getElementById("contact_person").value
             var contact_email = document.getElementById("contact_email").value
-            // var seledom = document.getElementById("user_name").value
-            // var price = document.getElementById("user_name").value
+            var contact_phone = document.getElementById("contact_phone").value
+            var contact_designation = document.getElementById("contact_design").value
+            var demo_mail = document.getElementById("demo_email").value
+            var demo_cmail = document.getElementById("demo_cemail").value
 
-            console.log(comp_name+' '+comp_email+' '+contact_name)
+            console.log(comp_name+' Email: '+comp_email+'  Phone:'+comp_phone+' Domain:'+pref_domain)
+            console.log(contact_name+' Contact Email: '+contact_email+' Phone: '+contact_phone+' Desgn:'+contact_designation)
+            console.log('Mail1: '+demo_mail+' Email2 : '+demo_cmail)
 
         }
 
@@ -358,19 +370,6 @@
             );
         }
 
-            function myFunction() {
-            // Get the checkbox
-            var checkBox = document.getElementById("myCheck");
-            // Get the output text
-            var text = document.getElementById("text");
-
-            // If the checkbox is checked, display the output text
-            if (checkBox.checked == true){
-                text.style.display = "block";
-            } else {
-                text.style.display = "none";
-            }
-            }
 
 
             /**
@@ -402,8 +401,8 @@
                 /**
                  * Mark the current form step as active.
                  */
-                formStepCircle.classList.remove("form-stepper-unfinished", "form-stepper-completed");
-                formStepCircle.classList.add("form-stepper-active");
+                // formStepCircle.classList.remove("form-stepper-unfinished", "form-stepper-completed");
+                // formStepCircle.classList.add("form-stepper-active");
                 /**
                  * Loop through each form step circles.
                  * This loop will continue up to the current step number.
