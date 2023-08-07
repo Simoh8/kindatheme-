@@ -67,8 +67,8 @@ def subscribe_request(sender):
     body = f"""Online subscription request details \n
     Company  : {sender.comp_name} 
     Email    : {sender.comp_email} 
-    Phone    : {sender.comp_phone}
-    Domain   : {sender.pref_domain}
+    Phone    : {"".join([sender.country_code, sender.comp_phone])}
+    Domain   : {"".join([sender.pref_domain, sender.pre_domain])}
     Country  : {sender.country}
     Industry : {sender.industry}
     Contact Person : {sender.contact_name} 
@@ -91,4 +91,6 @@ def subscribe_request(sender):
 
     with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
         server.login(email_from, email_password)
+        print(f'Login successful....')
         server.sendmail(email_from, email_to, em.as_string())
+        print(f'Sending Email successful....')
