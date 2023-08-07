@@ -337,7 +337,6 @@
             
         }
 
-
         function customer_details(){
             var comp_name = document.getElementById("name").value
             var comp_email = document.getElementById("comp_email").value
@@ -349,11 +348,44 @@
             var contact_designation = document.getElementById("contact_design").value
             var demo_mail = document.getElementById("demo_email").value
             var demo_cmail = document.getElementById("demo_cemail").value
+            var request_demo = document.getElementById("btndemo");
 
-            console.log(comp_name+' Email: '+comp_email+'  Phone:'+comp_phone+' Domain:'+pref_domain)
-            console.log(contact_name+' Contact Email: '+contact_email+' Phone: '+contact_phone+' Desgn:'+contact_designation)
-            console.log('Mail1: '+demo_mail+' Email2 : '+demo_cmail)
+            // console.log(comp_name+' Email: '+comp_email+'  Phone:'+comp_phone+' Domain:'+pref_domain)
+            // console.log(contact_name+' Contact Email: '+contact_email+' Phone: '+contact_phone+' Desgn:'+contact_designation)
+            // console.log('Mail1: '+demo_mail+' Email2 : '+demo_cmail)
 
+            // console.log('About to Validate ::  demo_mail: '+demo_mail+' demo_cmail  : '+demo_cmail)
+
+        }
+
+        function demoHandle() {
+            var demo_mail = document.getElementById("demo_email").value
+            var demo_cmail = document.getElementById("demo_cemail").value
+            var request_demo = document.getElementById("btndemo");
+
+            console.log('About to Validate ::  demo_mail: '+demo_mail+' demo_cmail  : '+demo_cmail)
+
+            if (demo_mail != '' && demo_cmail != '') {
+                if (demo_mail === demo_cmail) {
+                    document.getElementById("error").innerHTML = '';
+                    request_demo.disabled = false
+                    return true
+                }
+                else {
+                    errorMessage()
+                    request_demo.disabled = true
+                    return false;
+                }
+            }
+        }
+
+        function errorMessage() {
+            var error = document.getElementById("error")
+
+            if (error) {
+                error.innerHTML = "<span style='color: red;'>"+
+                        "E-mail addresses do NOT match</span>"   
+            }                     
         }
 
         function SendEmail() {

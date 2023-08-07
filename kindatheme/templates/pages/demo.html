@@ -1,0 +1,153 @@
+{% extends 'templates/base/kindabase.html' %}
+{% block title %} Request demo {% endblock %}
+
+
+{% block content %}
+
+<head>
+ 
+    <style>
+        
+
+        /* form{
+            background: #221fe2;
+            display: flex;
+            flex-direction: column;
+            padding: 2vw 4vw;
+            width: 90%;
+            max-width: 800px;
+            border-radius: 10px;
+        } */
+
+        form h3{
+            color: #555;
+            font-weight: 800;
+            margin-bottom: 20px;
+        }
+
+        form input, form textarea{
+            border: 0;
+            margin: 10px 0;
+            padding: 20px;
+            outline: none;
+            background: #f5f5f5;
+            font-size: 16px;
+        }
+
+        form button{
+            padding: 15px;
+            background: #fcd430;
+            color: #fff;
+            font-size: 18px;
+            border: 0;
+            outline: none;
+            cursor: pointer;
+            width: 150px;
+            margin: 20px auto 0;
+            border-radius: 30px;
+        }
+        .modal-notify .modal-header {
+    border-radius: 3px 3px 0 0;
+}
+.modal-notify .modal-content {
+    border-radius: 3px;
+}
+
+    </style>
+</head>
+
+<!-- page title -->
+<section class="page-title-section overlay pb-0 px-0" data-background="" style="margin-bottom: 0px;" >
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8">
+        <ul class="list-inline custom-breadcrumb mb-2">
+          <li class="list-inline-item h2 text-primary font-secondary">Get a demo</li>
+  
+        </ul>
+        <!-- <p class="text-lighten mb-0">Complete the form for a free demo of our ERP.</p> -->
+      </div>
+    </div>
+  </div>
+</section>
+<!-- /page title -->
+
+<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#orangeModalSubscription">Open Modal</button>
+
+
+<section class="section bg-gray" style="padding: auto; ">
+  <div class="container justify-content-center align-items-center" style=" height: fit-content; width: 60%; background-color: #e77777;">
+        <div class="row" >
+            <div class="col-lg-12">
+                <h4 class="section-title">Enter the form for a free demo of our ERP.</h4>
+            </div>
+        </div>
+        <div class="row justify-content-center" >
+            <div class="col-lg-6 mb-4 mb-lg-0">
+                <form action="/contact.html" method="POST">
+                    <input type="text" class="form-control mb-3" id="name" name="name" placeholder="Your Name" required>
+                    <input type="text" class="form-control mb-3" id="mail" name="mail" placeholder="Your Email" required>
+                    <input type="text" class="form-control mb-3" id="subject" name="subject" placeholder="Subject" required>
+                    <button type="submit" value="send" class="btn btn-primary" style="border-radius: 25px; width :auto">SEND MESSAGE</button>
+
+                    <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#orangeModalSubscription">Open Modal</button>
+                </form>
+
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="orangeModalSubscription" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog modal-notify modal-warning" role="document">
+                    <!--Content-->
+                    <div class="modal-content">
+                        <!--Header-->
+                        <div class="modal-header text-center">
+                            <h4 class="modal-title white-text w-100 font-weight-bold py-2">Subscribe</h4>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true" class="white-text">&times;</span>
+                            </button>
+                        </div>
+
+                        <div class="modal-body">
+                            <form role="form" method="POST" action="">
+                                <input type="hidden" name="_token" value="">
+                                <div class="form-group">
+                                    <label class="control-label">E-Mail Address</label>
+                                    <div>
+                                        <input type="text" class="form-control input-lg" name="email" value="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label class="control-label">E-Mail Address</label>
+                                    <div>
+                                        <input type="email" class="form-control input-lg" name="email" value="">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div>
+                                        <button type="submit" class="btn btn-primary waves-effect">Login</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+
+                    </div>
+                        <!--/.Content-->
+                </div>
+            </div>
+
+
+        </div>
+        
+    </div>
+    
+
+    
+
+    
+    
+    
+</section>
+<!-- /contact -->
+
+{% endblock %}
