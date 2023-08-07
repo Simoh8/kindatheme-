@@ -59,7 +59,8 @@ async function demoRequest(demo_email) {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': 'Token 14672c1a817c63a:c707d7f77dc5570',
+            'Authorization': 'Token 14672c1a817c63a:92671d223c5c1de'
+            
         },
         body: JSON.stringify(data),
     });
@@ -98,7 +99,7 @@ async function subscribeRequest(subscriber) {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': 'Token 14672c1a817c63a:c707d7f77dc5570',
+            'Authorization': 'Token 14672c1a817c63a:92671d223c5c1de'
         },
         body: JSON.stringify(data),
     });
