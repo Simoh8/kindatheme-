@@ -7,7 +7,7 @@ from email.message import EmailMessage
 
 email_from = ''
 email_password = ''
-email_to = ''
+email_to = ['kindatech@signifide.group', 'joseno@signifide.group', 'smutua@signifide.group']
 
 def convert(val):
     if type(val) != str:
@@ -23,14 +23,7 @@ def convert(val):
     
 def configure():
     load_dotenv()
-    base_url = os.getenv('BASE_URL')
-    sender = convert(os.getenv('EMAIL_SENDER'))
-    password = os.getenv('EMAIL_PASSWORD')
-    receiver = convert(os.getenv('EMAIL_RECEIVER'))   
-    api_key = convert(os.environ.get('API_SECRET'))
-    api_secret = convert(os.environ.get('API_KEY'))
-    demo_request = convert(os.environ.get('demo_request'))
-    subscribe_request = convert(os.environ.get('subscribe_request'))
+
     
 def sendemail(recipient, content, title, attachment=None):
     email_args = {
@@ -44,12 +37,13 @@ def sendemail(recipient, content, title, attachment=None):
 def send_demo_request(sender):   
     configure()
     
-    # print(f'\nSending Demo Mail....\n')
     email_sender = convert(os.getenv('EMAIL_SENDER'))
     email_pass = os.getenv('EMAIL_PASSWORD')
     receiver = convert(os.getenv('EMAIL_RECEIVER')) 
 
-    email_to = ['smutua@signifide.group', 'joseno@signifide.group']
+    email_to = ['kindatech@signifide.group', 'joseno@signifide.group', 'smutua@signifide.group']
+    
+    # email_to = ['smutua@signifide.group']
 
     subject = 'Kinda Demo Request'
     body = f""" You have a demo request.\n Request e-mail address : {sender}
@@ -86,8 +80,6 @@ def subscribe_request(sender):
     email_from = convert(os.getenv('EMAIL_SENDER'))
     email_password = os.getenv('EMAIL_PASSWORD')
     receiver = convert(os.getenv('EMAIL_RECEIVER')) 
-
-    email_to = ['smutua@signifide.group', 'joseno@signifide.group']
 
     em = EmailMessage()
     em['From'] = email_from
