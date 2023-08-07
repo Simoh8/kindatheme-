@@ -1,4 +1,3 @@
-
         var next_click=document.querySelectorAll(".next_button");
         var main_form=document.querySelectorAll(".main");
         var step_list = document.querySelectorAll(".progress-bar li");
@@ -350,20 +349,12 @@
             var demo_cmail = document.getElementById("demo_cemail").value
             var request_demo = document.getElementById("btndemo");
 
-            // console.log(comp_name+' Email: '+comp_email+'  Phone:'+comp_phone+' Domain:'+pref_domain)
-            // console.log(contact_name+' Contact Email: '+contact_email+' Phone: '+contact_phone+' Desgn:'+contact_designation)
-            // console.log('Mail1: '+demo_mail+' Email2 : '+demo_cmail)
-
-            // console.log('About to Validate ::  demo_mail: '+demo_mail+' demo_cmail  : '+demo_cmail)
-
         }
 
         function demoHandle() {
             var demo_mail = document.getElementById("demo_email").value
             var demo_cmail = document.getElementById("demo_cemail").value
             var request_demo = document.getElementById("btndemo");
-
-            console.log('About to Validate ::  demo_mail: '+demo_mail+' demo_cmail  : '+demo_cmail)
 
             if (demo_mail != '' && demo_cmail != '') {
                 if (demo_mail === demo_cmail) {
