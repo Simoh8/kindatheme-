@@ -23,6 +23,7 @@ $(document).ready(function() {
         var comp_name = document.getElementById("name").value
         var comp_email = document.getElementById("comp_email").value
         var comp_phone = document.getElementById("comp_phone").value
+        var pre_domain = document.getElementById("subdomain").value
         var pref_domain = document.getElementById("domain").value
         var country = document.getElementById("country").value
         var industry = document.getElementById("industry").value
@@ -30,12 +31,13 @@ $(document).ready(function() {
         var contact_email = document.getElementById("contact_email").value
         var contact_phone = document.getElementById("contact_phone").value
         var contact_designation = document.getElementById("contact_design").value
+        var country_code = document.getElementById("country_code").value
 
         // console.log(comp_name+' Email: '+comp_email+'  Phone:'+comp_phone+' Domain:'+pref_domain)
         // console.log(contact_name+' Contact Email: '+contact_email+' Phone: '+contact_phone+' Desgn:'+contact_designation)
 
         subscriber = {
-            comp_name, comp_email, comp_phone, pref_domain, contact_name, contact_email, contact_phone, contact_designation, country, industry
+            comp_name, comp_email, comp_phone, pref_domain, contact_name, contact_email, contact_phone, contact_designation, country, industry, pre_domain, country_code
         }
         subscribeRequest(subscriber).then(data => {
             console.log(data);
@@ -83,6 +85,7 @@ async function demoRequest(demo_email) {
 
 
 async function subscribeRequest(subscriber) {
+    // 'Authorization': 'Token c23367fa236788b:d1831df7cf7310c', local
     var data = ''
 
     // let url = 'http://127.0.0.1:8007/api/method/kindatheme.api.subscribe_email';
@@ -100,6 +103,7 @@ async function subscribeRequest(subscriber) {
         headers: {
             'Content-Type': 'application/json',
             'Authorization': 'Token 14672c1a817c63a:92671d223c5c1de'
+            
         },
         body: JSON.stringify(data),
     });
