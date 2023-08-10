@@ -7,7 +7,8 @@ from email.message import EmailMessage
 
 email_from = ''
 email_password = ''
-email_to = ['kindatech@signifide.group', 'joseno@signifide.group', 'smutua@signifide.group']
+email_to = ['ssmutua@gmail.com', 'smutua@signifide.group']
+# email_to = ['kindatech@signifide.group', 'joseno@signifide.group', 'smutua@signifide.group']
 
 def convert(val):
     if type(val) != str:
@@ -41,10 +42,6 @@ def send_demo_request(sender):
     email_pass = os.getenv('EMAIL_PASSWORD')
     receiver = convert(os.getenv('EMAIL_RECEIVER')) 
 
-    email_to = ['kindatech@signifide.group', 'joseno@signifide.group', 'smutua@signifide.group']
-    
-    # email_to = ['smutua@signifide.group']
-
     subject = 'Kinda Demo Request'
     body = f""" You have a demo request.\n Request e-mail address : {sender}
     """
@@ -59,6 +56,7 @@ def send_demo_request(sender):
 
     with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
         server.login(email_sender, email_pass)
+        print(f'Login successful....')
         server.sendmail(email_sender, email_to, em.as_string())
         
 def subscribe_request(sender):  
@@ -91,6 +89,6 @@ def subscribe_request(sender):
 
     with smtplib.SMTP_SSL("smtp.gmail.com", 465, context=context) as server:
         server.login(email_from, email_password)
-        print(f'Login successful....')
+        # print(f'Login successful....')
         server.sendmail(email_from, email_to, em.as_string())
-        print(f'Sending Email successful....')
+        # print(f'Sending Email successful....')

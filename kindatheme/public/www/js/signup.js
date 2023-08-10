@@ -2,10 +2,7 @@
 $(document).ready(function() {
     document.querySelector("#btndemo").addEventListener('click', 
     (e)=> {
-        console.log('Demo Submit Clicked.')
-
         let demo_email = document.querySelector("#demo_email").value;
-        console.log('Demo email...'+demo_email)
 
         demoRequest(demo_email).then(data => {
             console.log(data);
@@ -33,15 +30,24 @@ $(document).ready(function() {
         var contact_designation = document.getElementById("contact_design").value
         var country_code = document.getElementById("country_code").value
 
-        // console.log(comp_name+' Email: '+comp_email+'  Phone:'+comp_phone+' Domain:'+pref_domain)
+        console.log(comp_name+' Email: '+comp_email+'  Phone:'+comp_phone+' Domain:'+pref_domain+' Person:'+contact_name+' mobile:'+contact_email)
         // console.log(contact_name+' Contact Email: '+contact_email+' Phone: '+contact_phone+' Desgn:'+contact_designation)
 
         subscriber = {
             comp_name, comp_email, comp_phone, pref_domain, contact_name, contact_email, contact_phone, contact_designation, country, industry, pre_domain, country_code
         }
-        subscribeRequest(subscriber).then(data => {
-            console.log(data);
-        });
+        
+
+        if ((comp_name) && (country_code) && (comp_phone) && (pref_domain) && (contact_name) && (contact_email)) {
+            // alert('Required fields OK ')
+            subscribeRequest(subscriber).then(data => {
+                console.log(data);
+            });
+        }
+        else {
+            alert('Missing Required field')
+        }
+        
 
     });
 
@@ -50,8 +56,6 @@ $(document).ready(function() {
 
 async function demoRequest(demo_email) {
     var data = ''
-    // //  'Authorization': 'Token 14672c1a817c63a:c707d7f77dc5570',
-    // let url = 'http://127.0.0.1:8007/api/method/kindatheme.api.demo_email';
     let url = 'https://demo.kindatech.group/api/method/kindatheme.api.demo_email';
     data = {'sender': demo_email };
 
@@ -61,7 +65,7 @@ async function demoRequest(demo_email) {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': 'Token 14672c1a817c63a:92671d223c5c1de'
+            'Authorization': 'Token 14672c1a817c63a:92671d223c5c1de'  
             
         },
         body: JSON.stringify(data),
@@ -85,10 +89,7 @@ async function demoRequest(demo_email) {
 
 
 async function subscribeRequest(subscriber) {
-    // 'Authorization': 'Token c23367fa236788b:d1831df7cf7310c', local
     var data = ''
-
-    // let url = 'http://127.0.0.1:8007/api/method/kindatheme.api.subscribe_email';
     let url = 'https://demo.kindatech.group/api/method/kindatheme.api.subscribe_email';
 
     console.log('Subscriber Req: ... '+subscriber)
@@ -102,8 +103,7 @@ async function subscribeRequest(subscriber) {
         method: 'POST',
         headers: {
             'Content-Type': 'application/json',
-            'Authorization': 'Token 14672c1a817c63a:92671d223c5c1de'
-            
+            'Authorization': 'Token 14672c1a817c63a:92671d223c5c1de',            
         },
         body: JSON.stringify(data),
     });
