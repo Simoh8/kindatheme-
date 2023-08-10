@@ -45,7 +45,7 @@ $(document).ready(function() {
             });
         }
         else {
-            alert('Missing Required field')
+            alert('Provide required field')
         }
         
 
